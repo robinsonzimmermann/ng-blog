@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: 18
       - run: npm ci
-      - run: npm build
+      - run: npm run build -- --configuration=production
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
