@@ -1,0 +1,16 @@
+<div class="container">
+  @for(post of posts$ | async; track post) {
+    <app-post-item
+      [post]="post"
+      [link]="post | postUrl"
+    ></app-post-item>
+  }
+</div>
+
+<mat-paginator
+  [length]="total"
+  [pageSize]="postPerPage"
+  [showFirstLastButtons]="true"
+  (page)="navigate($event)"
+  aria-label="Select page">
+</mat-paginator>
