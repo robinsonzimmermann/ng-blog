@@ -36,6 +36,7 @@ jobs:
           node-version: 18
       - run: npm ci
       - run: npm run build -- --configuration=production --base-href=/ng-blog/
+      - run: cp dist/blog/browser/index.html dist/blog/browser/404.html
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
