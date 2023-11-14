@@ -28,7 +28,11 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/posts"
+              {
+                "glob": "**/*.*",
+                "input": "posts",
+		            "output": "/"
+              }
             ],
             "styles": [
               "@angular/material/prebuilt-themes/deeppurple-amber.css",

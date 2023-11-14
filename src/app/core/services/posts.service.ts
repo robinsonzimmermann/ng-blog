@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, map, of } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Post, Posts } from '../model/post.model';
-import meta from '../../../posts/meta.json';
+import { HttpClient } from '@angular/common/http';
 
 const POSTS_PER_PAGE = 9;
 
@@ -9,8 +9,10 @@ const POSTS_PER_PAGE = 9;
   providedIn: 'root'
 })
 export class PostsService {
+  constructor(private httpClient: HttpClient) {}
+
   getPosts(pageNumber: number = 0): Observable<Posts> {
-    return of(meta).pipe(
+    return this.httpClient.get<Post[]>('meta.json').pipe(
       map((posts) => ({
         posts: posts.slice(pageNumber * POSTS_PER_PAGE, pageNumber * POSTS_PER_PAGE + POSTS_PER_PAGE),
         total: posts.length,
