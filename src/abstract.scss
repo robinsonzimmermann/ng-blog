@@ -1,0 +1,94 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$backbase-primary: (
+ 50: #e8eaff,
+ 100: #c4c9fe,
+ 200: #99a6fe,
+ 300: #6683ff,
+ 400: #3366ff,
+ 500: #0048fc,
+ 600: #0040f0,
+ 700: #0034e3,
+ 800: #0027d9,
+ 900: #000bc0,
+ contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: rgba(white, 0.87),
+    700: rgba(white, 0.87),
+    800: rgba(white, 0.87),
+    900: rgba(white, 0.87),
+ )
+);
+
+$backbase-secondary: (
+ 50: #e4eaff,
+ 100: #beceeb,
+ 200: #9eadce,
+ 300: #7b8cb1,
+ 400: #63759c,
+ 500: #4a5f88,
+ 600: #3c5378,
+ 700: #2c4162,
+ 800: #1d2f4c,
+ 900: #091c35,
+ contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: rgba(white, 0.87),
+    700: rgba(white, 0.87),
+    800: rgba(white, 0.87),
+    900: rgba(white, 0.87),
+ )
+);
+
+$backbase-accent: (
+ 50: #fbe8e7,
+ 100: #ffc8bc,
+ 200: #ffa392,
+ 300: #ff7e67,
+ 400: #ff6047,
+ 500: #ff3e2a,
+ 600: #f43826,
+ 700: #e63121,
+ 800: #d8291c,
+ 900: #bf1a13,
+ contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: rgba(white, 0.87),
+    700: rgba(white, 0.87),
+    800: rgba(white, 0.87),
+    900: rgba(white, 0.87),
+ )
+);
+
+$backbase-primary: mat.define-palette($backbase-primary, 500);
+$backbase-accent: mat.define-palette($backbase-accent, 400);
+
+$backbase-typography: mat.define-typography-config(
+  $font-family: 'Libre Franklin',
+);
+
+$backbase-theme: mat.define-light-theme((
+  color: (
+    primary: $backbase-primary,
+    accent: $backbase-accent,
+  ),
+  typography: $backbase-typography,
+  density: 0,
+));

@@ -1,0 +1,17 @@
+<div class="featured-card center-container">
+  <div class="featured-image">
+    <img mat-card-image [src]="post?.teaser" alt="">
+  </div>
+  
+  <div class="featured-content">
+    <div>
+      <h1>{{ post?.title }}</h1>
+      <p>
+        {{ post?.excerpt }}
+      </p>
+    </div>
+    <div>
+      <a mat-raised-button color="primary" [routerLink]="">Read more</a>
+    </div>
+  </div>
+</div>

@@ -6,6 +6,7 @@ export interface Post {
   date: string;
   author: string;
   permalink: string;
+  featured?: boolean;
 }
 
 export interface Posts {

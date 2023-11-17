@@ -1,9 +1,14 @@
-.container {
+.grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 36px;
+  padding: 2rem 0;
 
   app-post-grid {
     border-radius: 5px;
   }
+}
+
+.spacer {
+  margin: 3rem 0;
 }

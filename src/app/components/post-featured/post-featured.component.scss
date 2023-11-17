@@ -1,0 +1,61 @@
+:host {
+  &:before {
+    content: "";
+    background: linear-gradient(121deg, rgba(51,102,255,1) 0%, rgba(55,114,255,1) 35%, rgba(73,164,255,1) 38%, rgba(105,254,255,1) 100%);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 700px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    opacity: .2;
+  }
+  &:after {
+    content: "";
+    background: linear-gradient(180deg, transparent, #ffffff);
+    background-size: 200%;
+    background-position-x: 100%;
+    height: 700px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-size: 3em;
+}
+
+.featured-card {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: transparent;
+
+  .featured-content {
+    flex-grow: 1;
+  }
+
+  .featured-image {
+    max-width: 560px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

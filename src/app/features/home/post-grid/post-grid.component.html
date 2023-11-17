@@ -1,16 +1,34 @@
-<div class="container">
-  @for(post of posts$ | async; track post) {
-    <app-post-item
-      [post]="post"
-      [link]="post | postUrl"
-    ></app-post-item>
-  }
-</div>
+<div class="home-page">
+  <app-post-featured [post]="featuredPost$ | async"></app-post-featured>
 
-<mat-paginator
-  [length]="total"
-  [pageSize]="postPerPage"
-  [showFirstLastButtons]="true"
-  (page)="navigate($event)"
-  aria-label="Select page">
-</mat-paginator>
+  <mat-divider></mat-divider>
+
+  <app-engineering-content></app-engineering-content>
+
+  <div class="spacer"></div>
+
+  <app-categories></app-categories>
+
+  <div class="grid-container center-container">
+    @for(post of posts$ | async; track post) {
+      <app-post-item
+        [post]="post"
+        [link]="post | postUrl"
+      ></app-post-item>
+    }
+  </div>
+
+  <div class="center-container">
+    <mat-paginator
+      [length]="total"
+      [pageSize]="postPerPage"
+      [showFirstLastButtons]="true"
+      (page)="navigate($event)"
+      aria-label="Select page">
+    </mat-paginator>
+  </div>
+
+  <mat-divider></mat-divider>
+  
+  <app-jobs></app-jobs>
+</div>

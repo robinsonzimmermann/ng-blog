@@ -1,6 +1,38 @@
 @use '@angular/material' as mat;
 
-@include mat.core();
+@import "abstract";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@include mat.core-theme($backbase-theme);
+@include mat.all-component-themes($backbase-theme);
+@include mat.typography-hierarchy($backbase-typography);
+
+:root {
+  --mat-divider-color: #{mat.get-theme-color($backbase-theme, primary)};
+}
+
+html, body { height: 100%; margin: 0; }
+
+.center-container {
+  max-width: 1024px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+
+app-root {
+  .mat-divider {
+    width: 80%;
+    position: relative;
+    margin: 3rem 0;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 15px;
+      height: 15px;
+      background: var(--mat-divider-color);
+    }
+  }
+}
