@@ -7,9 +7,11 @@ export interface Post {
   author: string;
   permalink: string;
   featured?: boolean;
+  categories: string[];
 }
 
 export interface Posts {
+  highlightedPost: Post;
   posts: Post[];
   total: number;
 }

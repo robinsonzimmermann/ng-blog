@@ -1,9 +1,34 @@
 <div class="content">
-  <app-logo></app-logo>
-  <nav>
-    <ul>
-      <li><a mat-button>Home</a></li>
-      <li><a mat-stroked-button><span>Backbase.io</span> <mat-icon fontIcon="open_in_new" iconPositionEnd></mat-icon></a></li>
-    </ul>
+  <a mat-button routerLink="/">
+    <app-logo></app-logo>
+  </a>
+  <nav class="horizontal" aria-label="Menu Items" *appSwitchMedia="['desktop', 'tablet']">
+    <ng-container *ngTemplateOutlet="menu"></ng-container>
   </nav>
+  <div *appSwitchMedia="['mobile']">
+    <button mat-fab color="primary" (click)="toggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <mat-drawer-container class="">
+      <mat-drawer mode="over" [opened]="menuOpen" class="mobile-menu">
+        <div class="close-button-container">
+          <button mat-icon-button class="close-button" (click)="menuOpen = false">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+
+        <nav aria-label="Menu Items"  (click)="menuOpen = false">
+          <ng-container *ngTemplateOutlet="menu"></ng-container>
+        </nav>
+      </mat-drawer>
+    </mat-drawer-container>
+  </div>
 </div>
+
+<ng-template #menu>
+  <mat-list>
+    <mat-list-item><a mat-button routerLink="/">Home</a></mat-list-item>
+    <mat-list-item><a mat-stroked-button href="https://backbase.io" target="blank"><span>Backbase.io</span> <mat-icon iconPositionEnd>open_in_new</mat-icon></a></mat-list-item>
+  </mat-list>
+</ng-template>

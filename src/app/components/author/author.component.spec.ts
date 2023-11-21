@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PostGridComponent } from './post-grid.component';
+import { AuthorComponent } from './author.component';
 
-describe('PostGridComponent', () => {
-  let component: PostGridComponent;
-  let fixture: ComponentFixture<PostGridComponent>;
+describe('AuthorComponent', () => {
+  let component: AuthorComponent;
+  let fixture: ComponentFixture<AuthorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PostGridComponent]
+      imports: [AuthorComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PostGridComponent);
+    fixture = TestBed.createComponent(AuthorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

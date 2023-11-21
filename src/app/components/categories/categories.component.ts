@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatChipsModule } from '@angular/material/chips';
+import { MatChipListboxChange, MatChipsModule } from '@angular/material/chips';
 
 
 @Component({
@@ -11,5 +11,11 @@ import { MatChipsModule } from '@angular/material/chips';
   styleUrl: './categories.component.scss'
 })
 export class CategoriesComponent {
+  @Input() categories!: string[];
+  @Output() selected = new EventEmitter<string[]>();
 
+  onChange(event: MatChipListboxChange) {
+    const selected: string[] = event.value ?? [];
+    this.selected.emit(selected.map((value) => value.toLowerCase()));
+  }
 }

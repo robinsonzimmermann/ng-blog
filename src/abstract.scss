@@ -14,16 +14,16 @@ $backbase-primary: (
  800: #0027d9,
  900: #000bc0,
  contrast: (
-    50: rgba(black, 0.87),
-    100: rgba(black, 0.87),
-    200: rgba(black, 0.87),
-    300: rgba(black, 0.87),
-    400: rgba(black, 0.87),
-    500: rgba(black, 0.87),
-    600: rgba(white, 0.87),
-    700: rgba(white, 0.87),
-    800: rgba(white, 0.87),
-    900: rgba(white, 0.87),
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
  )
 );
 
@@ -39,16 +39,16 @@ $backbase-secondary: (
  800: #1d2f4c,
  900: #091c35,
  contrast: (
-    50: rgba(black, 0.87),
-    100: rgba(black, 0.87),
-    200: rgba(black, 0.87),
-    300: rgba(black, 0.87),
-    400: rgba(black, 0.87),
-    500: rgba(black, 0.87),
-    600: rgba(white, 0.87),
-    700: rgba(white, 0.87),
-    800: rgba(white, 0.87),
-    900: rgba(white, 0.87),
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
  )
 );
 
@@ -64,16 +64,16 @@ $backbase-accent: (
  800: #d8291c,
  900: #bf1a13,
  contrast: (
-    50: rgba(black, 0.87),
-    100: rgba(black, 0.87),
-    200: rgba(black, 0.87),
-    300: rgba(black, 0.87),
-    400: rgba(black, 0.87),
-    500: rgba(black, 0.87),
-    600: rgba(white, 0.87),
-    700: rgba(white, 0.87),
-    800: rgba(white, 0.87),
-    900: rgba(white, 0.87),
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
  )
 );
 
@@ -82,6 +82,7 @@ $backbase-accent: mat.define-palette($backbase-accent, 400);
 
 $backbase-typography: mat.define-typography-config(
   $font-family: 'Libre Franklin',
+  $headline-5: mat.define-typography-level(4em, 1, 700),
 );
 
 $backbase-theme: mat.define-light-theme((

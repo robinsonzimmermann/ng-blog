@@ -3,10 +3,11 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule),
+    loadComponent: () =>
+      import('./features/home/home.component').then(mod => mod.HomeComponent),
   },
   {
     path: ':year/:month/:day/:permalink',
-    loadChildren: () => import('./features/post/post.module').then(m => m.PostModule),
+    loadComponent: () => import('./features/post/post.component').then(m => m.PostComponent),
   }
 ];

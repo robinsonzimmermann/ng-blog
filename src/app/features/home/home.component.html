@@ -1,0 +1,44 @@
+<div class="home-page">
+  @if(posts$ | async; as posts) {
+    <app-post-featured [post]="posts.highlightedPost"></app-post-featured>
+
+    <mat-divider></mat-divider>
+
+    <app-engineering-content></app-engineering-content>
+
+    <div class="spacer"></div>
+
+    @if (categories$ | async; as categories) {
+      <app-categories [categories]="categories" (selected)="filterCategory($event)"></app-categories>
+    }
+
+    <div class="grid-container center-container">
+      
+      @for(post of posts.posts; track post) {
+        <app-post-item
+          [post]="post"
+          [link]="post | postUrl"
+        ></app-post-item>
+      }
+    
+    </div>
+
+    <div class="center-container">
+      <mat-paginator
+        [length]="total"
+        [pageSize]="postPerPage"
+        [showFirstLastButtons]="true"
+        [pageIndex]="currentPage$$ | async"
+        (page)="navigate($event)"
+        aria-label="Select page">
+      </mat-paginator>
+    </div>
+  }
+  @else {
+    <mat-spinner></mat-spinner>
+  }
+
+  <mat-divider></mat-divider>
+  
+  <app-jobs></app-jobs>
+</div>

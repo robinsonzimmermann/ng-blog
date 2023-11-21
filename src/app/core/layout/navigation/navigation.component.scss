@@ -4,19 +4,27 @@
   padding: 16px;
 }
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 0 16px;
-
-  &,
-  a {
-
+.horizontal {
+  .mat-mdc-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
-  ul {
+  .mat-mdc-list-item {
+    width: auto;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+
+  .close-button-container {
     display: flex;
-    list-style: none;
+    justify-content: flex-end;
   }
 }

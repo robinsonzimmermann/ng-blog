@@ -1,0 +1,17 @@
+@if (post$ | async; as post) {
+  <header class="header">
+    <div class="header-content">
+      <h1>{{ post.title }}</h1>
+      <h2>{{ post.excerpt }}</h2>
+    </div>
+    <div class="header-image">
+      <img [src]="post.teaser" alt="">
+    </div>
+  </header>
+}
+
+<div class="center-container">
+  <markdown
+    [src]="path$ | async">
+  </markdown>
+</div>

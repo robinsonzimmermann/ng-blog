@@ -1,8 +1,7 @@
 <div class="center-container">
-  <mat-chip-listbox multiple="true" aria-label="Category selection">
-    <mat-chip-option>Frontend</mat-chip-option>
-    <mat-chip-option>Backend</mat-chip-option>
-    <mat-chip-option>Mobile</mat-chip-option>
-    <mat-chip-option>System Engineering</mat-chip-option>
+  <mat-chip-listbox (change)="onChange($event)" multiple="true" aria-label="Category selection">
+    @for (category of categories; track $index) {
+      <mat-chip-option>{{ category | titlecase }}</mat-chip-option>
+    }
   </mat-chip-listbox>
 </div>

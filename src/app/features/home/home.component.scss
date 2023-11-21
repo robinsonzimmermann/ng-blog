@@ -1,8 +1,12 @@
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-gap: 36px;
   padding: 2rem 0;
+  // grid-template-columns: repeat(3, 1fr);
+
+  @media screen and (min-width: 480px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   app-post-grid {
     border-radius: 5px;
