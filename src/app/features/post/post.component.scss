@@ -1,0 +1,34 @@
+.post {
+  &__header {
+    margin: 16px 0 16px;
+    @media screen and (min-width: 768px) {
+      display: flex;
+  
+      &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 10%;
+      }
+
+      &-image {
+        max-width: 720px;
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    @media screen and (min-width: 768px) {
+      grid-template-columns: auto  500px;
+    }
+  }
+
+  &__related-posts {
+    display: grid;
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+  }
+}

@@ -1,6 +1,6 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BehaviorSubject, Observable, Subject, combineLatest, forkJoin, switchMap, tap, withLatestFrom } from 'rxjs';
+import { BehaviorSubject, Observable, combineLatest, switchMap, tap } from 'rxjs';
 import { Posts } from '../../core/model/post.model';
 import { PostsService } from '../../core/services/posts.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,6 +14,8 @@ import { PostItemComponent } from '../../components/post-item/post-item.componen
 import { PostUrlPipe } from '../../core/utils/post-url.pipe';
 import { JobsComponent } from '../../components/jobs/jobs.component';
 import { HttpUrlEncodingCodec } from '@angular/common/http';
+import { AuthorsList } from '../../core/model/author.model';
+import { AuthorsService } from '../../core/services/authors.service';
 
 @Component({
   selector: 'app-home',
@@ -47,15 +49,16 @@ export class HomeComponent implements OnInit {
       this.loading = false;
     }),
   );
+  authors$: Observable<AuthorsList> = this.authorsService.getAuthors();
 
   categories$: Observable<string[]> = this.postsService.getCategories();
 
   constructor(
     private postsService: PostsService,
+    private authorsService: AuthorsService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private urlEncoder: HttpUrlEncodingCodec,
-    private cd: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {

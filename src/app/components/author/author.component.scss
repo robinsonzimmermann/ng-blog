@@ -1,0 +1,28 @@
+.author {
+  display: flex;
+  align-items: center;
+  gap: .25em;
+  color: #9da4ae;
+
+  &__avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+
+    img {
+      width: 100%;
+    }
+  }
+  &__author-fullname {
+    font-size: .8em;
+  }
+
+  &.lg {
+    font-size: 1.2em;
+
+    .author__avatar {
+      width: 120px;
+      height: 120px;
+    }
+  }
+}

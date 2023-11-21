@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { Post } from '../../core/model/post.model';
 import { RouterModule } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
 import { PostUrlPipe } from '../../core/utils/post-url.pipe';
+import { ReadMoreButtonComponent } from '../read-more-button/read-more-button.component';
 
 @Component({
   selector: 'app-post-featured',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, RouterModule, PostUrlPipe],
+  imports: [CommonModule, MatCardModule, RouterModule, ReadMoreButtonComponent, PostUrlPipe],
   templateUrl: './post-featured.component.html',
   styleUrl: './post-featured.component.scss'
 })

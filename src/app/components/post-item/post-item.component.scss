@@ -1,3 +1,25 @@
+.mdc-card {
+  height: 100%;
+}
+
 .mdc-card__media {
   width: 100%;
+}
+
+mat-card-actions {
+  display: flex;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+[data-role="button"] {
+  transition: .15s ease-out transform;
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.mat-mdc-chip.mat-mdc-standard-chip {
+  --mdc-chip-label-text-size: .8em;
+  --mdc-chip-container-height: 22px;
 }

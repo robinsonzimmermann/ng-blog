@@ -10,7 +10,7 @@
         {{ post.excerpt }}
       </p>
       <div class="cta-container">
-        <a mat-raised-button color="primary" [routerLink]="post | postUrl">Read more</a>
+        <app-read-more-button [link]="post | postUrl" [cta]="true"></app-read-more-button>
       </div>
     </div>
   </div>

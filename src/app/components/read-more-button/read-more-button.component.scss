@@ -1,0 +1,11 @@
+a {
+  mat-icon {
+    transform: translateX(-3px);
+    transition: .15s ease-out transform;
+  }
+  &:hover {
+    mat-icon {
+      transform: translateX(0);
+    }
+  }
+}

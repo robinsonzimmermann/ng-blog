@@ -1,4 +1,4 @@
-<div class="home-page">
+<div class="home">
   @if(posts$ | async; as posts) {
     <app-post-featured [post]="posts.highlightedPost"></app-post-featured>
 
@@ -9,18 +9,22 @@
     <div class="spacer"></div>
 
     @if (categories$ | async; as categories) {
-      <app-categories [categories]="categories" (selected)="filterCategory($event)"></app-categories>
+      <app-categories
+        [categories]="categories"
+        (selected)="filterCategory($event)"
+      ></app-categories>
     }
 
-    <div class="grid-container center-container">
-      
-      @for(post of posts.posts; track post) {
-        <app-post-item
-          [post]="post"
-          [link]="post | postUrl"
-        ></app-post-item>
+    <div class="home__grid-container center-container">
+      @if (authors$ | async; as authors) {
+        @for(post of posts.posts; track post) {
+          <app-post-item
+            [post]="post"
+            [author]="authors[post.author]"
+            [link]="post | postUrl"
+          ></app-post-item>
+        }
       }
-    
     </div>
 
     <div class="center-container">

@@ -6,7 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { SwitchMediaDirective } from '../../utils/switch-media.directive';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @Component({
@@ -18,6 +19,7 @@ import {MatListModule} from '@angular/material/list';
     MatButtonModule,
     MatIconModule,
     MatListModule,
+    MatMenuModule,
     RouterModule,
     MatSidenavModule,
     SwitchMediaDirective,

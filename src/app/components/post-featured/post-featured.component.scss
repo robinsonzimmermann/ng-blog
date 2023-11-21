@@ -28,30 +28,30 @@
 }
 
 .featured-card {
-  display: flex;
-  flex-direction: row-reverse;
-  background-color: transparent;
-
-  .featured-content {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-
-    .post-content {
-      width: 100%;
-      padding: 0 16px
-    }
-
-    .cta-container {
-      text-align: right;
-      margin: 32px 0;
-    }
-  }
-
   .featured-image {
     max-width: 560px;
     img {
       width: 100%;
+    }
+  } 
+  .cta-container {
+    text-align: right;
+    margin: 32px 0;
+  }
+  @media screen and (min-width: 480px) {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: transparent;
+
+    .featured-content {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+
+      .post-content {
+        width: 100%;
+        padding: 0 16px
+      }
     }
   }
 }

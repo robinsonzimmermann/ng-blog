@@ -48,6 +48,14 @@ export class PostsService {
     )
   }
 
+  getRelatedPosts(post: Post): Observable<Post[]> {
+    return this.getAllPosts()
+      .pipe(
+        map((posts) => posts.filter(({ categories }) => categories.some((category) => post.categories.includes(category)))),
+        map((posts) => posts.slice(0, 3))
+      )
+  }
+
   get postsPerPage() {
     return POSTS_PER_PAGE;
   }

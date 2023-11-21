@@ -36,3 +36,15 @@ app-root {
     }
   }
 }
+
+img {
+  width: 100%;
+}
+
+[data-role="button"] {
+  cursor: pointer;
+}
+
+.spacer {
+  margin: 3rem 0;
+}
