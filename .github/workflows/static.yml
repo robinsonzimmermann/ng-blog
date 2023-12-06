@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: 18
       - run: npm ci
-      - run:
+      - run: |
           npm run build:utils
           npm run build:posts
           npm run build -- --configuration=production --base-href=/ng-blog/
