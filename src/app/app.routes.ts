@@ -9,5 +9,9 @@ export const routes: Routes = [
   {
     path: ':year/:month/:day/:permalink',
     loadComponent: () => import('./features/post/post.component').then(m => m.PostComponent),
+  },
+  {
+    path: 'unpublished/:permalink',
+    loadComponent: () => import('./features/post/post.component').then(m => m.PostComponent),
   }
 ];

@@ -3,11 +3,13 @@ export interface Post {
   title: string;
   excerpt: string;
   teaser: string;
-  date: string;
+  date: string | undefined;
   author: string;
   permalink: string;
   featured?: boolean;
-  categories: string[];
+  category: string;
+  tags: string[];
+  readingTime: string;
 }
 
 export interface Posts {

@@ -1,17 +1,19 @@
-<div class="content">
-  <a mat-button routerLink="/">
+<div class="nav">
+  <a class="nav__logo-link" routerLink="/">
     <app-logo></app-logo>
   </a>
-  <nav class="horizontal" aria-label="Menu Items" *appSwitchMedia="['desktop', 'tablet']">
+  <nav class="nav__menu-container--horizontal" aria-label="Menu Items" *appSwitchMedia="['desktop', 'tablet']">
     <ng-container *ngTemplateOutlet="menu"></ng-container>
   </nav>
-  <div *appSwitchMedia="['mobile']">
-    <button mat-fab color="primary" (click)="toggleMenu()">
-      <mat-icon>menu</mat-icon>
-    </button>
+  <div class="nav__menu-container---mobile" *appSwitchMedia="['mobile']">
+    <app-button>
+      <button mat-fab color="primary" (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </app-button>
 
     <mat-drawer-container class="">
-      <mat-drawer mode="over" [opened]="menuOpen" class="mobile-menu">
+      <mat-drawer mode="over" [opened]="menuOpen" class="nav__mobile-menu">
         <div class="close-button-container">
           <button mat-icon-button class="close-button" (click)="menuOpen = false">
             <mat-icon>close</mat-icon>
@@ -28,14 +30,8 @@
 
 <ng-template #menu>
   <mat-list>
-    <mat-list-item><a mat-button routerLink="/">Blog</a></mat-list-item>
-    <mat-list-item>
-      <button mat-button [matMenuTriggerFor]="menu">Principles</button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>Item 1</button>
-        <button mat-menu-item>Item 2</button>
-      </mat-menu>
-    </mat-list-item>
-    <mat-list-item><a mat-stroked-button href="https://backbase.io" target="blank"><span>Backbase.io</span> <mat-icon iconPositionEnd>open_in_new</mat-icon></a></mat-list-item>
+    <mat-list-item><app-button><a mat-button routerLink="/" appIsActive>Blog</a></app-button></mat-list-item>
+    <mat-list-item><app-button>app-button><a mat-button routerLink="principles" appIsActive>How we do</a></app-button></mat-list-item>
+    <mat-list-item class="push-right"><app-button><a mat-stroked-button href="https://backbase.io" target="blank"><span>Backbase.io</span> <mat-icon iconPositionEnd>open_in_new</mat-icon></a></app-button></mat-list-item>
   </mat-list>
 </ng-template>

@@ -1,0 +1,9 @@
+{
+  "title": "<%= title %>",
+  "excerpt": "<%= excerpt %>",
+  "teaser": "assets/undraw_To_the_stars_re_wq2x.png",
+  "authors": <%= stringify(authors) %>,
+  "category": "<%= category %>",
+  "tags": <%= stringify(tags) %>,
+  "date": "<%= date %>"
+}

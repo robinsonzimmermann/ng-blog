@@ -5,8 +5,14 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:utils": "ng build utils",
+    "build:posts": "node tools/concat",
+    "build:all": "npm run build:utils && npm run build:posts && npm run build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "posts:publish": "node --experimental-specifier-resolution=node tools/publish",
+    "posts:new": "ng generate ./tools/post-scaffolder:post-scaffolder",
+    "preposts:new": "cd tools/post-scaffolder && npm i && npm run build"
   },
   "private": true,
   "dependencies": {
@@ -42,6 +48,8 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "marked": "^9.0.0",
+    "ng-packagr": "^17.0.0",
+    "reading-time-estimator": "^1.9.2",
     "typescript": "~5.2.2"
   }
 }

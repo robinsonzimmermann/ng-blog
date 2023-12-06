@@ -3,9 +3,7 @@
     <header class="post__header">
       <div class="post__header-content">
         <mat-chip-set aria-label="Category selection">
-          @for (category of post.categories; track $index) {
-            <mat-chip data-role="button" (click)="navigate('categories/' + category)">{{ category | titlecase }}</mat-chip>
-          }
+          <mat-chip data-role="button" (click)="navigate('categories/' + post.category)">{{ post.category | titlecase }}</mat-chip>
         </mat-chip-set>
         <h1>{{ post.title }}</h1>
         <h2>{{ post.excerpt }}</h2>
@@ -17,24 +15,24 @@
         <img [src]="post.teaser" alt="">
       </div>
     </header>
-  }
-  
-  <div class="center-container post__content">
-    <markdown
-      [src]="path$ | async">
-    </markdown>
-  </div>
-
-  <mat-divider></mat-divider>
-
-  <div class="center-container">
-    <h3>Continue the Journey: Explore Related Posts</h3>
-    <div class="post__related-posts">
-      @if (relatedPosts$ | async; as relatedPosts) {
-        @for (relatedPost of relatedPosts; track $index) {
-          <app-post-item [post]="relatedPost"></app-post-item>
-        }
-      }
+    <div class="center-container post__content">
+      <markdown
+        [src]="post.permalink + '/post.md'">
+      </markdown>
     </div>
-  </div>
+  }
+
+  @if (relatedPosts$ | async; as relatedPosts) {
+    @if (relatedPosts.length) {
+      <app-divider></app-divider>
+      <div class="center-container">
+        <h3>Continue the Journey: Explore Related Posts</h3>
+        <div class="post__related-posts">
+          @for (relatedPost of relatedPosts; track $index) {
+            <app-post-item [post]="relatedPost"></app-post-item>
+          }
+        </div>
+      </div>
+    }
+  }
 </div>

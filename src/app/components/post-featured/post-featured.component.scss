@@ -1,7 +1,7 @@
 :host {
   &:before {
     content: "";
-    background: linear-gradient(121deg, rgba(51,102,255,1) 0%, rgba(55,114,255,1) 35%, rgba(73,164,255,1) 38%, rgba(105,254,255,1) 100%);
+    background: linear-gradient(121deg, var(--blog-palette-gradient-1) 0%, var(--blog-palette-gradient-2) 35%, var(--blog-palette-gradient-3) 38%, var(--blog-palette-gradient-4) 100%);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     height: 700px;
@@ -34,10 +34,7 @@
       width: 100%;
     }
   } 
-  .cta-container {
-    text-align: right;
-    margin: 32px 0;
-  }
+
   @media screen and (min-width: 480px) {
     display: flex;
     flex-direction: row-reverse;

@@ -6,7 +6,6 @@ import { PostsService } from '../../core/services/posts.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { PostFeaturedComponent } from '../../components/post-featured/post-featured.component';
-import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { EngineeringContentComponent } from '../../components/engineering-content/engineering-content.component';
 import { CategoriesComponent } from '../../components/categories/categories.component';
@@ -16,6 +15,7 @@ import { JobsComponent } from '../../components/jobs/jobs.component';
 import { HttpUrlEncodingCodec } from '@angular/common/http';
 import { AuthorsList } from '../../core/model/author.model';
 import { AuthorsService } from '../../core/services/authors.service';
+import { DividerComponent } from '../../components/divider/divider.component';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +23,6 @@ import { AuthorsService } from '../../core/services/authors.service';
   imports: [
     CommonModule,
     PostFeaturedComponent,
-    MatDividerModule,
     EngineeringContentComponent,
     CategoriesComponent,
     PostItemComponent,
@@ -31,6 +30,7 @@ import { AuthorsService } from '../../core/services/authors.service';
     MatProgressSpinnerModule,
     PostUrlPipe,
     JobsComponent,
+    DividerComponent,
   ],
   providers: [HttpUrlEncodingCodec],
   templateUrl: './home.component.html',

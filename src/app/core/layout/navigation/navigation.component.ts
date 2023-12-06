@@ -8,6 +8,8 @@ import { SwitchMediaDirective } from '../../utils/switch-media.directive';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { IsActiveDirective } from './is-active.directive';
+import { ButtonComponent } from '../../../components/button/button.component';
 
 
 @Component({
@@ -23,6 +25,8 @@ import { MatMenuModule } from '@angular/material/menu';
     RouterModule,
     MatSidenavModule,
     SwitchMediaDirective,
+    IsActiveDirective,
+    ButtonComponent,
   ],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss'

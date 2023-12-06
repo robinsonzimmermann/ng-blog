@@ -5,5 +5,5 @@ export interface Author {
 }
 
 export interface AuthorsList {
-  [id: string]: Author;
+  [fullName: string]: Author;
 }

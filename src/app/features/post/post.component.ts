@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Observable, filter, map, switchMap } from 'rxjs';
+import { Observable, filter, map, switchMap, tap } from 'rxjs';
 import { Post } from '../../core/model/post.model';
 import { PostsService } from '../../core/services/posts.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
@@ -9,8 +9,8 @@ import { Author } from '../../core/model/author.model';
 import { AuthorsService } from '../../core/services/authors.service';
 import { AuthorComponent } from '../../components/author/author.component';
 import { MatChipsModule } from '@angular/material/chips';
-import { MatDividerModule } from '@angular/material/divider';
 import { PostItemComponent } from '../../components/post-item/post-item.component';
+import { DividerComponent } from '../../components/divider/divider.component';
 
 @Component({
   selector: 'app-post',
@@ -21,18 +21,19 @@ import { PostItemComponent } from '../../components/post-item/post-item.componen
     AuthorComponent,
     MatChipsModule,
     RouterModule,
-    MatDividerModule,
+    DividerComponent,
     PostItemComponent,
   ],
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss'
 })
 export class PostComponent {
-  post$: Observable<Post | undefined> = this.activatedRoute.paramMap.pipe(
-    map((params) => params.get('permalink')),
+  permalink$ = this.activatedRoute.paramMap.pipe();
+
+  post$: Observable<Post | undefined> = this.activatedRoute.url.pipe(
+    map((segments) => segments.map(({ path }) => path).join('/')),
     switchMap((permalink) => this.postsService.getPost(permalink))
   );
-  path$: Observable<string | undefined> = this.post$.pipe(map((post) => post?.path));
   author$: Observable<Author | undefined> = this.post$.pipe(
     filter(Boolean),
     switchMap(({ author }) => this.authorsService.getAuthorDetails( author )),

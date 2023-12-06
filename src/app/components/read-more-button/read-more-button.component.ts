@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-read-more-button',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, RouterModule],
+  imports: [CommonModule, MatButtonModule, MatIconModule, RouterModule, ButtonComponent],
   templateUrl: './read-more-button.component.html',
   styleUrl: './read-more-button.component.scss'
 })
