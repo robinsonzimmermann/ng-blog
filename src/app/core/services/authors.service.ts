@@ -24,7 +24,7 @@ export class AuthorsService {
       );
   }
 
-  getAuthorDetails(authorId: string): Observable<Author | undefined> {
-    return this.getAuthors().pipe(map((authors) => authors[authorId]));
+  getAuthorsDetails(postAuthors: string[]): Observable<Author[] | undefined> {
+    return this.getAuthors().pipe(map((authors) => postAuthors.map((author) => authors[author])));
   }
 }

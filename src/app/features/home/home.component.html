@@ -16,7 +16,7 @@
         @for(post of posts.posts; track post) {
           <app-post-item
             [post]="post"
-            [author]="authors[post.author]"
+            [authors]="authors | postAuthors : post.authors"
           ></app-post-item>
         }
       }

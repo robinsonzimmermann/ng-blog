@@ -34,9 +34,9 @@ export class PostComponent {
     map((segments) => segments.map(({ path }) => path).join('/')),
     switchMap((permalink) => this.postsService.getPost(permalink))
   );
-  author$: Observable<Author | undefined> = this.post$.pipe(
+  authors$: Observable<Author[] | undefined> = this.post$.pipe(
     filter(Boolean),
-    switchMap(({ author }) => this.authorsService.getAuthorDetails( author )),
+    switchMap(({ authors }) => this.authorsService.getAuthorsDetails( authors )),
   )
 
   relatedPosts$: Observable<Post[]> = this.post$.pipe(

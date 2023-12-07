@@ -7,8 +7,10 @@
         </mat-chip-set>
         <h1>{{ post.title }}</h1>
         <h2>{{ post.excerpt }}</h2>
-        @if (author$ | async; as author) {
-          <app-author [author]="author" size="lg"></app-author>
+        @if (authors$ | async; as authors) {
+          @for (author of authors; track $index) {
+            <app-author [author]="author" size="lg"></app-author>
+          }
         }
       </div>
       <div class="post__header-image">

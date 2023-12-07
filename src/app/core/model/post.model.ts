@@ -4,7 +4,7 @@ export interface Post {
   excerpt: string;
   teaser: string;
   date: string | undefined;
-  author: string;
+  authors: string[];
   permalink: string;
   featured?: boolean;
   category: string;

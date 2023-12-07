@@ -30,7 +30,7 @@ import { PostUrlPipe } from '../../core/utils/post-url.pipe';
 })
 export class PostItemComponent {
   @Input() post!: Post;
-  @Input() author?: Author;
+  @Input() authors?: Author[];
 
   constructor(private router: Router, private postUrl: PostUrlPipe) {}
 

@@ -16,6 +16,7 @@ import { HttpUrlEncodingCodec } from '@angular/common/http';
 import { AuthorsList } from '../../core/model/author.model';
 import { AuthorsService } from '../../core/services/authors.service';
 import { DividerComponent } from '../../components/divider/divider.component';
+import { PostAuthorsPipe } from '../../core/utils/post-authors.pipe';
 
 @Component({
   selector: 'app-home',
@@ -31,6 +32,7 @@ import { DividerComponent } from '../../components/divider/divider.component';
     PostUrlPipe,
     JobsComponent,
     DividerComponent,
+    PostAuthorsPipe,
   ],
   providers: [HttpUrlEncodingCodec],
   templateUrl: './home.component.html',
@@ -50,7 +52,6 @@ export class HomeComponent implements OnInit {
     }),
   );
   authors$: Observable<AuthorsList> = this.authorsService.getAuthors();
-
   categories$: Observable<string[]> = this.postsService.getCategories();
 
   constructor(

@@ -12,8 +12,10 @@
     <p>
       {{ post.excerpt }}
     </p>
-    @if (author) {
-      <app-author [author]="author"></app-author>
+    @if (authors) {
+      @for (author of authors; track $index) {
+        <app-author [author]="author"></app-author>
+      }
     }
   </mat-card-content>
   <mat-card-actions>
