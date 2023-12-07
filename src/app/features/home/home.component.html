@@ -1,23 +1,23 @@
 <div class="home">
   @if(posts$ | async; as posts) {
-    <app-post-featured [post]="posts.highlightedPost"></app-post-featured>
+    <blog-post-featured [post]="posts.highlightedPost"></blog-post-featured>
 
     <div class="spacer"></div>
 
     @if (categories$ | async; as categories) {
-      <app-categories
+      <blog-categories
         [categories]="categories"
         (selected)="filterCategory($event)"
-      ></app-categories>
+      ></blog-categories>
     }
 
     <div class="home__grid-container center-container">
       @if (authors$ | async; as authors) {
         @for(post of posts.posts; track post) {
-          <app-post-item
+          <blog-post-item
             [post]="post"
             [authors]="authors | postAuthors : post.authors"
-          ></app-post-item>
+          ></blog-post-item>
         }
       }
     </div>
@@ -37,9 +37,9 @@
     <mat-spinner></mat-spinner>
   }
 
-  <app-divider></app-divider>
+  <blog-divider></blog-divider>
 
-  <app-engineering-content></app-engineering-content>
+  <blog-engineering-content></blog-engineering-content>
   
-  <app-jobs></app-jobs>
+  <blog-jobs></blog-jobs>
 </div>

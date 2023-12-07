@@ -1,16 +1,16 @@
 <div class="nav">
   <a class="nav__logo-link" routerLink="/">
-    <app-logo></app-logo>
+    <blog-logo></blog-logo>
   </a>
-  <nav class="nav__menu-container--horizontal" aria-label="Menu Items" *appSwitchMedia="['desktop', 'tablet']">
+  <nav class="nav__menu-container--horizontal" aria-label="Menu Items" *blogSwitchMedia="['desktop', 'tablet']">
     <ng-container *ngTemplateOutlet="menu"></ng-container>
   </nav>
   <div class="nav__menu-container---mobile" *appSwitchMedia="['mobile']">
-    <app-button>
+    <blog-button>
       <button mat-fab color="primary" (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
       </button>
-    </app-button>
+    </blog-button>
 
     <mat-drawer-container class="">
       <mat-drawer mode="over" [opened]="menuOpen" class="nav__mobile-menu">
@@ -30,8 +30,8 @@
 
 <ng-template #menu>
   <mat-list>
-    <mat-list-item><app-button><a mat-button routerLink="/" appIsActive>Blog</a></app-button></mat-list-item>
-    <mat-list-item><app-button>app-button><a mat-button routerLink="principles" appIsActive>How we do</a></app-button></mat-list-item>
-    <mat-list-item class="push-right"><app-button><a mat-stroked-button href="https://backbase.io" target="blank"><span>Backbase.io</span> <mat-icon iconPositionEnd>open_in_new</mat-icon></a></app-button></mat-list-item>
+    <mat-list-item><blog-button><a mat-button routerLink="/" appIsActive>Blog</a></blog-button></mat-list-item>
+    <mat-list-item><blog-button>blog-button><a mat-button routerLink="principles" appIsActive>How we do</a></blog-button></mat-list-item>
+    <mat-list-item class="push-right"><blog-button><a mat-stroked-button href="https://backbase.io" target="blank"><span>Backbase.io</span> <mat-icon iconPositionEnd>open_in_new</mat-icon></a></blog-button></mat-list-item>
   </mat-list>
 </ng-template>

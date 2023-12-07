@@ -13,7 +13,7 @@ import { ButtonComponent } from '../../../components/button/button.component';
 
 
 @Component({
-  selector: 'app-navigation',
+  selector: 'blog-navigation',
   standalone: true,
   imports: [
     CommonModule,

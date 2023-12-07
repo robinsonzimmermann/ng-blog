@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
-  selector: 'app-divider',
+  selector: 'blog-divider',
   standalone: true,
   imports: [MatDividerModule],
   templateUrl: './divider.component.html',

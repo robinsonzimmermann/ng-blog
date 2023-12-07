@@ -19,7 +19,7 @@ import { DividerComponent } from '../../components/divider/divider.component';
 import { PostAuthorsPipe } from '../../core/utils/post-authors.pipe';
 
 @Component({
-  selector: 'app-home',
+  selector: 'blog-home',
   standalone: true,
   imports: [
     CommonModule,

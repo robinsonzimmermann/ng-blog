@@ -4,7 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 
 @Component({
-  selector: 'app-engineering-content',
+  selector: 'blog-engineering-content',
   standalone: true,
   imports: [CommonModule, MatCardModule, MatRippleModule],
   templateUrl: './engineering-content.component.html',

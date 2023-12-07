@@ -13,7 +13,7 @@ import { PostItemComponent } from '../../components/post-item/post-item.componen
 import { DividerComponent } from '../../components/divider/divider.component';
 
 @Component({
-  selector: 'app-post',
+  selector: 'blog-post',
   standalone: true,
   imports: [
     CommonModule,

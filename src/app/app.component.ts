@@ -7,7 +7,7 @@ import { FooterComponent } from './core/layout/footer/footer.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
 @Component({
-  selector: 'app-root',
+  selector: 'blog-root',
   standalone: true,
   imports: [CommonModule, NavigationComponent, FooterComponent, RouterOutlet, MarkdownModule, MatToolbarModule],
   templateUrl: './app.component.html',

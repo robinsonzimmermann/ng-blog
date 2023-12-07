@@ -13,11 +13,11 @@ enum MediaQueries {
 type _Event<T> = Event & { target: T}
 
 @Directive({
-  selector: '[appSwitchMedia]',
+  selector: '[blogSwitchMedia]',
   standalone: true,
 })
 export class SwitchMediaDirective implements OnInit, OnDestroy {
-  @Input('appSwitchMedia') media: MediaType[] = [];
+  @Input('blogSwitchMedia') media: MediaType[] = [];
 
   private currentMedia$$ = new Subject<MediaType>();
   private destroy$$ = new Subject<void>();

@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
-  selector: 'app-jobs',
+  selector: 'blog-jobs',
   standalone: true,
   imports: [CommonModule, MatButtonModule, MatIconModule, ButtonComponent],
   templateUrl: './jobs.component.html',

@@ -12,7 +12,7 @@ import { PostUrlPipe } from '../../core/utils/post-url.pipe';
 
 
 @Component({
-  selector: 'app-post-item',
+  selector: 'blog-post-item',
   standalone: true,
   imports: [
     CommonModule,

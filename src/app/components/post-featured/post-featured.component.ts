@@ -7,7 +7,7 @@ import { PostUrlPipe } from '../../core/utils/post-url.pipe';
 import { ReadMoreButtonComponent } from '../read-more-button/read-more-button.component';
 
 @Component({
-  selector: 'app-post-featured',
+  selector: 'blog-post-featured',
   standalone: true,
   imports: [CommonModule, MatCardModule, RouterModule, ReadMoreButtonComponent, PostUrlPipe],
   templateUrl: './post-featured.component.html',

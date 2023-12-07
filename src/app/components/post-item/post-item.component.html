@@ -14,11 +14,11 @@
     </p>
     @if (authors) {
       @for (author of authors; track $index) {
-        <app-author [author]="author"></app-author>
+        <blog-author [author]="author"></blog-author>
       }
     }
   </mat-card-content>
   <mat-card-actions>
-    <app-read-more-button [link]="post | postUrl"></app-read-more-button>
+    <blog-read-more-button [link]="post | postUrl"></blog-read-more-button>
   </mat-card-actions>
 </mat-card>

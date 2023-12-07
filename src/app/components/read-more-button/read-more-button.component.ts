@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
-  selector: 'app-read-more-button',
+  selector: 'blog-read-more-button',
   standalone: true,
   imports: [CommonModule, MatButtonModule, MatIconModule, RouterModule, ButtonComponent],
   templateUrl: './read-more-button.component.html',

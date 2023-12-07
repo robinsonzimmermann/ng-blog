@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Author } from '../../core/model/author.model';
 
 @Component({
-  selector: 'app-author',
+  selector: 'blog-author',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './author.component.html',

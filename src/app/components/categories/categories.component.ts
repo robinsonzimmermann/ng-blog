@@ -4,7 +4,7 @@ import { MatChipListboxChange, MatChipsModule } from '@angular/material/chips';
 
 
 @Component({
-  selector: 'app-categories',
+  selector: 'blog-categories',
   standalone: true,
   imports: [CommonModule, MatChipsModule],
   templateUrl: './categories.component.html',
