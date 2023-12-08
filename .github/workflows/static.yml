@@ -38,7 +38,7 @@ jobs:
       - run: |
           npm run build:utils
           npm run build:posts
-          npm run build -- --configuration=production --base-href=/ng-blog/
+          npm run build -- --configuration=production --base-href=/ng-blog/ --verbose
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
