@@ -1,4 +1,5 @@
 @use '@angular/material' as mat;
+@use 'sass:color';
 
 @include mat.core();
 
@@ -52,6 +53,31 @@ $backbase-secondary: (
  )
 );
 
+$backbase-electric: (
+ 50: #dffffe,
+ 100: #adfffd,
+ 200: #69ffff,
+ 300: #00fcff,
+ 400: #00f7fe,
+ 500: #00f2ff,
+ 600: #00e1eb,
+ 700: #00c9cf,
+ 800: #00b4b6,
+ 900: #008e86,
+ contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+ )
+);
+
 $backbase-accent: (
  50: #fbe8e7,
  100: #ffc8bc,
@@ -80,7 +106,7 @@ $backbase-accent: (
 $backbase-primary-light: mat.define-palette($backbase-primary, 500);
 $backbase-accent-light: mat.define-palette($backbase-accent, 400);
 
-$backbase-primary-dark: mat.define-palette($backbase-primary, 500);
+$backbase-primary-dark: mat.define-palette($backbase-electric, 200);
 $backbase-accent-dark: mat.define-palette($backbase-accent, 400);
 
 $backbase-typography: mat.define-typography-config(
@@ -111,41 +137,58 @@ $backbase-theme-dark: mat.define-dark-theme((
 
 @include mat.typography-hierarchy($backbase-typography);
 
-.light-theme {
-  @include mat.core-theme($backbase-theme-light);
-  @include mat.all-component-themes($backbase-theme-light);
-
-  --blog-palette-primary: #{mat.get-theme-color($backbase-theme-light, primary)};
-  --blog-palette-gradient-1: rgba(51,102,255,1);
-  --blog-palette-gradient-2: rgba(55,114,255,1);
-  --blog-palette-gradient-3: rgba(73,164,255,1);
-  --blog-palette-gradient-4: rgba(105,254,255,1);
-  --blog-palette-background: #ffffff;
-
-  background-color: var(--blog-palette-background);
-}
-
-.dark-theme {
-  @include mat.core-theme($backbase-theme-dark);
-  @include mat.all-component-themes($backbase-theme-dark);
-
-  --blog-palette-primary: #{mat.get-theme-color($backbase-theme-dark, primary)};
-  --blog-palette-gradient-1: rgba(9,28,53,1);
-  --blog-palette-gradient-2: rgba(80,48,58,1);
-  --blog-palette-gradient-3: rgba(154,68,64,1);
-  --blog-palette-gradient-4: rgba(255,96,71,1);
-  --blog-palette-background: #424242;
-
-  background-color: var(--blog-palette-background);
-}
-
 :root {
+  @media (prefers-color-scheme: light) {
+    @include mat.core-theme($backbase-theme-light);
+    @include mat.all-component-themes($backbase-theme-light);
+  
+    --blog-palette-primary: #{mat.get-theme-color($backbase-theme-light, primary)};
+    --blog-palette-gradient-1: rgba(51,102,255,1);
+    --blog-palette-gradient-2: rgba(255,96,71,1);;
+    --blog-palette-gradient-3: rgba(73,164,255,1);
+    --blog-palette-gradient-4: rgba(105,254,255,1);
+    --blog-palette-background: #ffffff;
+    --blog-palette-text: #000000;
+    --blog-palette-neutral: #f3f6f9;
+    --blog-palette-tangerine: #ff6047;
+    --blog-palette-electric: #69ffff;
+    --mat-paginator-container-background-color: var(--blog-palette-background);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    @include mat.core-theme($backbase-theme-dark);
+    @include mat.all-component-themes($backbase-theme-dark);
+  
+    --blog-palette-primary: #{mat.get-theme-color($backbase-theme-dark, primary)};
+    --blog-palette-gradient-1: rgba(9,28,53,1);
+    --blog-palette-gradient-2: rgba(80,48,58,1);
+    --blog-palette-gradient-3: rgba(105,254,255,1);
+    --blog-palette-gradient-4: rgba(255,96,71,1);
+    --blog-palette-background: #{color.mix(#000000, map-get($backbase-secondary, 700), 75%)};
+    --mdc-elevated-card-container-color: var(--blog-palette-background);
+    --blog-palette-text: #ffffff;
+    --blog-palette-neutral: #000000;
+    --blog-palette-tangerine: #ff6047;
+    --blog-palette-electric: #69ffff;
+    --mat-paginator-container-background-color: var(--blog-palette-background);
+  }
+
   --mdc-typography-button-font-weight: bold;
   --mdc-elevated-card-container-elevation: none;
   --mdc-elevated-card-container-shape: 0;
+  --mdc-outlined-button-container-height: 50px;
+
+  .mat-mdc-card {
+    --mdc-elevated-card-container-elevation: 0;
+  }
 }
 
 html, body { height: 100%; margin: 0; }
+
+body {
+  color: var(--blog-palette-text);
+  background-color: var(--blog-palette-background);
+}
 
 .center-container {
   max-width: 1108px;

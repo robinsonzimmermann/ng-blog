@@ -7,7 +7,9 @@
   &__avatar {
     width: 30px;
     height: 30px;
-    border-radius: 30px;
+    border-radius: 100rem;
+    background-size: cover;
+    background-position: center;
 
     img {
       width: 100%;

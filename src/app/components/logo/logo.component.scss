@@ -3,6 +3,11 @@
   line-height: 1;
   height: 100%;
   align-items: center;
+  color: var(--blog-palette-text);
+
+  svg {
+    fill: var(--blog-palette-text);
+  }
 
   .symbol {
     width: .66em

@@ -17,6 +17,7 @@ import { AuthorsList } from '../../core/model/author.model';
 import { AuthorsService } from '../../core/services/authors.service';
 import { DividerComponent } from '../../components/divider/divider.component';
 import { PostAuthorsPipe } from '../../core/utils/post-authors.pipe';
+import { GradientComponent } from '../../components/gradient/gradient.component';
 
 @Component({
   selector: 'blog-home',
@@ -33,6 +34,7 @@ import { PostAuthorsPipe } from '../../core/utils/post-authors.pipe';
     JobsComponent,
     DividerComponent,
     PostAuthorsPipe,
+    GradientComponent,
   ],
   providers: [HttpUrlEncodingCodec],
   templateUrl: './home.component.html',

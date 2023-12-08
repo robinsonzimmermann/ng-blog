@@ -5,7 +5,7 @@
   <nav class="nav__menu-container--horizontal" aria-label="Menu Items" *blogSwitchMedia="['desktop', 'tablet']">
     <ng-container *ngTemplateOutlet="menu"></ng-container>
   </nav>
-  <div class="nav__menu-container---mobile" *appSwitchMedia="['mobile']">
+  <div class="nav__menu-container---mobile" *blogSwitchMedia="['mobile']">
     <blog-button>
       <button mat-fab color="primary" (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
