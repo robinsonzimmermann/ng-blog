@@ -5,7 +5,7 @@ import { filter, map } from 'rxjs';
 const ACTIVE_CLASS = 'active';
 
 @Directive({
-  selector: '[appIsActive]',
+  selector: '[blogIsActive]',
   standalone: true
 })
 export class IsActiveDirective implements OnInit {

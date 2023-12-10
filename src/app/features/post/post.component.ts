@@ -23,6 +23,7 @@ import { DividerComponent } from '../../components/divider/divider.component';
     RouterModule,
     DividerComponent,
     PostItemComponent,
+    MarkdownModule,
   ],
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss'

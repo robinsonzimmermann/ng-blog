@@ -181,6 +181,10 @@ $backbase-theme-dark: mat.define-dark-theme((
   .mat-mdc-card {
     --mdc-elevated-card-container-elevation: 0;
   }
+
+  --blog-breakpoint-sm: 480px;
+  --blog-breakpoint-md: 776px;
+  --blog-breakpoint-lg: 1128px;
 }
 
 html, body { height: 100%; margin: 0; }

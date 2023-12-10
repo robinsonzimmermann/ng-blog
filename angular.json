@@ -48,9 +48,7 @@
               "src/styles.scss"
             ],
             "prerender": true,
-            "scripts": [
-              "node_modules/marked/marked.min.js"
-            ],
+            "scripts": [],
             "server": "src/main.server.ts"
           },
           "configurations": {

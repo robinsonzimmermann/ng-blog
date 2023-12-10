@@ -2,36 +2,45 @@
   <a class="nav__logo-link" routerLink="/">
     <blog-logo></blog-logo>
   </a>
-  <nav class="nav__menu-container--horizontal" aria-label="Menu Items" *blogSwitchMedia="['desktop', 'tablet']">
-    <ng-container *ngTemplateOutlet="menu"></ng-container>
-  </nav>
-  <div class="nav__menu-container---mobile" *blogSwitchMedia="['mobile']">
-    <blog-button>
-      <button mat-fab color="primary" (click)="toggleMenu()">
-        <mat-icon>menu</mat-icon>
-      </button>
-    </blog-button>
 
-    <mat-drawer-container class="">
-      <mat-drawer mode="over" [opened]="menuOpen" class="nav__mobile-menu">
-        <div class="close-button-container">
-          <button mat-icon-button class="close-button" (click)="menuOpen = false">
-            <mat-icon>close</mat-icon>
+  @defer (when !isMobile) {
+    @if (!isMobile) {
+      <nav class="nav__menu-container--horizontal" aria-label="Menu Items">
+        <ng-container *ngTemplateOutlet="menu"></ng-container>
+      </nav>
+    }
+  }
+  @defer (when isMobile) {
+    @if (isMobile) {
+      <div class="nav__menu-container---mobile">
+        <blog-button>
+          <button mat-fab color="primary" (click)="toggleMenu()">
+            <mat-icon>menu</mat-icon>
           </button>
-        </div>
-
-        <nav aria-label="Menu Items"  (click)="menuOpen = false">
-          <ng-container *ngTemplateOutlet="menu"></ng-container>
-        </nav>
-      </mat-drawer>
-    </mat-drawer-container>
-  </div>
+        </blog-button>
+    
+        <mat-drawer-container class="">
+          <mat-drawer mode="over" [opened]="menuOpen" class="nav__mobile-menu">
+            <div class="close-button-container">
+              <button mat-icon-button class="close-button" (click)="menuOpen = false">
+                <mat-icon>close</mat-icon>
+              </button>
+            </div>
+    
+            <nav aria-label="Menu Items"  (click)="menuOpen = false">
+              <ng-container *ngTemplateOutlet="menu"></ng-container>
+            </nav>
+          </mat-drawer>
+        </mat-drawer-container>
+      </div>
+    }
+  }
 </div>
 
 <ng-template #menu>
   <mat-list>
-    <mat-list-item><blog-button><a mat-button routerLink="/" appIsActive>Blog</a></blog-button></mat-list-item>
-    <mat-list-item><blog-button>blog-button><a mat-button routerLink="principles" appIsActive>How we do</a></blog-button></mat-list-item>
+    <mat-list-item><blog-button><a mat-button routerLink="/" blogIsActive>Blog</a></blog-button></mat-list-item>
+    <mat-list-item><blog-button>blog-button><a mat-button routerLink="principles" blogIsActive>How we do</a></blog-button></mat-list-item>
     <mat-list-item class="push-right"><blog-button><a mat-stroked-button href="https://backbase.io" target="blank"><span>Backbase.io</span> <mat-icon iconPositionEnd>open_in_new</mat-icon></a></blog-button></mat-list-item>
   </mat-list>
 </ng-template>
