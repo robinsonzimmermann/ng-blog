@@ -47,7 +47,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "prerender": true,
+            "prerender": {
+              "routesFile": "routes.txt"
+            },
             "scripts": [],
             "server": "src/main.server.ts"
           },

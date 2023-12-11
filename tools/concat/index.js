@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { readingTime } = require('reading-time-estimator');
 
-function scanDirectory(directoryPath, filesArray) {
+function scanDirectory(directoryPath, filesArray, routesArray) {
     const files = fs.readdirSync(directoryPath);
 
     files.forEach(async (file) => {
@@ -11,7 +11,7 @@ function scanDirectory(directoryPath, filesArray) {
 
         if (stat.isDirectory()) {
             // Recursively scan subdirectories
-            scanDirectory(filePath, filesArray);
+            scanDirectory(filePath, filesArray, routesArray);
         } else if (file === 'meta.json') {
             // If the file is named "meta.json", read its content and add it to the array
             const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -23,6 +23,7 @@ function scanDirectory(directoryPath, filesArray) {
 
 
             filesArray.push(jsonObject);
+            routesArray.push(directoryPath.replace('content/posts', ''));
         }
     });
 
@@ -39,11 +40,13 @@ function main() {
     }
 
     const filesArray = [];
-    scanDirectory(startDirectory, filesArray);
+    const routesArray = [];
+    scanDirectory(startDirectory, filesArray, routesArray);
 
     // Write the sorted array to the output file
     const outputContent = JSON.stringify(filesArray);
     fs.writeFileSync(outputFilePath, outputContent, 'utf8');
+    fs.writeFileSync('routes.txt', routesArray.join('\r\n'), 'utf8');
 
     console.log(`Scanning completed. Output written to ${outputFilePath}`);
 }
