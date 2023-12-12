@@ -5,17 +5,15 @@
   
   <mat-card-content>
     <mat-chip-set>
-      <mat-chip>{{ post.category | titlecase }}</mat-chip>
+      <mat-chip data-role="button">{{ Category[post.category] }}</mat-chip>
     </mat-chip-set>
     <mat-card-title>{{ post.title }}</mat-card-title>
     <span class="muted">{{ post.date | date : 'longDate' }} | {{ post.readingTime }}</span>
     <p>
       {{ post.excerpt }}
     </p>
-    @if (authors) {
-      @for (author of authors; track $index) {
-        <blog-author [author]="author"></blog-author>
-      }
+    @for (author of post.authors; track $index) {
+      <blog-author [author]="author"></blog-author>
     }
   </mat-card-content>
   <mat-card-actions>

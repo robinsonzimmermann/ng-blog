@@ -1,7 +1,8 @@
 <div class="center-container">
-  <mat-chip-listbox (change)="onChange($event)" multiple="true" aria-label="Category selection">
+  <mat-tab-group (selectedTabChange)="onChange($event)" [selectedIndex]="active ? categories.indexOf(active) + 1 : 0" multiple="true" aria-label="Category selection">
+    <mat-tab labelClass="hide"></mat-tab>
     @for (category of categories; track $index) {
-      <mat-chip-option>{{ category | titlecase }}</mat-chip-option>
+      <mat-tab [labelClass]="category" [label]="Category[category]"></mat-tab>
     }
-  </mat-chip-listbox>
+  </mat-tab-group>
 </div>

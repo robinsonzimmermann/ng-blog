@@ -9,6 +9,7 @@ import { ReadMoreButtonComponent } from '../read-more-button/read-more-button.co
 import { MatRippleModule } from '@angular/material/core';
 import { MatChipsModule } from '@angular/material/chips';
 import { PostUrlPipe } from '../../core/utils/post-url.pipe';
+import { Category } from '../../core/model/categories.model';
 
 
 @Component({
@@ -30,7 +31,8 @@ import { PostUrlPipe } from '../../core/utils/post-url.pipe';
 })
 export class PostItemComponent {
   @Input() post!: Post;
-  @Input() authors?: Author[];
+
+  Category = Object.fromEntries(Object.entries(Category));
 
   constructor(private router: Router, private postUrl: PostUrlPipe) {}
 

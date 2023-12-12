@@ -1,15 +1,10 @@
-<blog-gradient></blog-gradient>
-<div class="home">
-  @if (featured$ | async; as featured) {
-    <blog-post-featured [post]="featured"></blog-post-featured>
-  }
-
-  <div class="spacer"></div>
-
-  <blog-categories-tab></blog-categories-tab>
+<blog-categories-tab></blog-categories-tab>
 
   @if (posts$ | async; as posts) {
-    <div class="home__grid-container center-container">
+    <div class="center-container">
+      <blog-category-title
+        [section]="category$ | async"
+      ></blog-category-title>
       <blog-posts-list [posts]="posts.posts"></blog-posts-list>
     </div>
 
@@ -33,4 +28,3 @@
   } @placeholder {
     <mat-spinner></mat-spinner>
   }
-</div>

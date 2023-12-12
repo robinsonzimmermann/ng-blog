@@ -7,7 +7,10 @@ import { Author, AuthorsList } from '../model/author.model';
 })
 export class PostAuthorsPipe implements PipeTransform {
 
-  transform(authors: AuthorsList, postAuthors: string[]): Author[] {
+  transform(authors: AuthorsList | undefined, postAuthors: string[]): Author[] {
+    if (!authors) {
+      return [];
+    }
     return postAuthors.map((authorName) => authors[authorName]);
   }
 

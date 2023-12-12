@@ -10,6 +10,19 @@ import { Author } from '../../core/model/author.model';
   styleUrl: './author.component.scss'
 })
 export class AuthorComponent {
-  @Input() author!: Author;
+  @Input('author') set _author(value: Author | string) {
+    console.log(value);
+    if (typeof value === 'string') {
+      this.author = {
+        fullname: value,
+        avatar: '',
+        role: ''
+      }
+    } else {
+      this.author = value;
+    }
+  };
   @Input() size: string = 'sm';
+
+  author!: Author;
 }

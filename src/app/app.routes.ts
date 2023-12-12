@@ -13,5 +13,10 @@ export const routes: Routes = [
   {
     path: 'unpublished/:permalink',
     loadComponent: () => import('./features/post/post.component').then(m => m.PostComponent),
+  },
+  {
+    path: 'category/:cat',
+    loadComponent: () =>
+      import('./features/category/category.component').then(m => m.CategoryComponent),
   }
 ];

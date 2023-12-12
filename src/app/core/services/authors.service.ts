@@ -8,23 +8,23 @@ import { Observable, map, shareReplay, tap } from 'rxjs';
 })
 export class AuthorsService {
 
+  private cached: Observable<AuthorsList> = this.httpClient.get<AuthorsList>('authors.json').pipe(shareReplay());
+
   constructor(private httpClient: HttpClient) {}
 
   getAuthors(): Observable<AuthorsList> {
-    return this.httpClient.get<AuthorsList>('authors.json')
-      .pipe(
-        shareReplay(),
-        map((authors) => Object.keys(authors).reduce((acc, curr) => ({
-          ...acc,
-          [curr]: {
-            ...authors[curr],
-            fullname: curr,
-          }
-        }), {})),
-      );
+    return this.cached.pipe(
+      map((authors) => Object.keys(authors).reduce((acc, curr) => ({
+        ...acc,
+        [curr]: {
+          ...authors[curr],
+          fullname: curr,
+        }
+      }), {})),
+    );
   }
 
-  getAuthorsDetails(postAuthors: string[]): Observable<Author[] | undefined> {
-    return this.getAuthors().pipe(map((authors) => postAuthors.map((author) => authors[author])));
+  getAuthorsDetails(postAuthors: Array<string | Author>): Observable<Author[] | undefined> {
+    return this.getAuthors().pipe(map((authors) => postAuthors.map((author) => typeof author === 'string' ? authors[author] : author)));
   }
 }

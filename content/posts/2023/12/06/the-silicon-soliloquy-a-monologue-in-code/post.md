@@ -1,5 +1,7 @@
 In the ethereal realm where silicon sprites pirouette in a dance of ones and zeros, we invite you to embark on a fleeting journey—a two-minute sonnet in silicon, where the quill of technology composes verses in the language of algorithms, guided by the timeless wisdom of Shakespeare.
 
+![caption of the image!](assets/undraw_taken_re_yn20.svg)
+
 As the curtains rise on this digital stage, witness the binary ballet unfold, each line of code a stanza, and every subroutine a poetic refrain. The symphony of silicon sprites harmonizes with the poetic echoes of the Bard, crafting a unique and enchanting overture in the vast expanse of the digital domain.
 
 Let the first verse commence, as the opening lines of code set the rhythm for the technological sonnet. "To byte or not to byte?" echoes the question, a nod to the existential ponderings of Hamlet, now transposed to the realm of circuits and processors.

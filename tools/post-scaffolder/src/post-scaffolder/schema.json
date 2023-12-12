@@ -21,10 +21,10 @@
       "enum": [
         "frontend",
         "backend",
-        "systems engineering",
+        "devops",
         "career",
         "sdlc",
-        "tech life"
+        "tech-life"
       ],
       "x-prompt": "In which of these categories your post fits best?"
     },
