@@ -1,11 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatAutocompleteModule, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { AsyncPipe } from '@angular/common';
-import { Observable, map, startWith } from 'rxjs';
+import { Observable, map, switchMap } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
+import { PostsService } from '../../core/services/posts.service';
+import { Post } from '../../core/model/post.model';
+import { Router } from '@angular/router';
+import { getPermalink } from '@blog/utils';
 
 @Component({
   selector: 'blog-search',
@@ -21,31 +25,39 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',
-  // encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None,
 })
 export class SearchComponent implements OnInit {
-  myControl = new FormControl<string | any>('');
-  options: any[] = [{name: 'Mary'}, {name: 'Shelley'}, {name: 'Igor'}];
-  filteredOptions!: Observable<any[]>;
+  control = new FormControl<string>('');
+
+  posts$ = this.postsService.getAllPosts();
+  filteredOptions!: Observable<Post[]>;
+  
+  constructor(private postsService: PostsService, private router: Router) {}
 
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map(value => {
-        const name = typeof value === 'string' ? value : value?.name;
-        return name ? this._filter(name as string) : this.options.slice();
-      }),
+    this.filteredOptions = this.control.valueChanges.pipe(
+      switchMap(() => {
+        return this.postsService.getPosts(0, 5, false, this.filter.bind(this)).pipe(map(({ posts }) => posts || []))
+      })
     );
   }
 
-  displayFn(user: any): string {
-    return user && user.name ? user.name : '';
+  displayFn(post: Post): string {
+    return post.title ?? '';
   }
 
-  private _filter(name: string): any[] {
-    if (name.length < 3) { return []; }
-    const filterValue = name.toLowerCase();
+  goToPost(event: MatAutocompleteSelectedEvent) {
+    const post: Post = event.option.value;
+    this.router.navigateByUrl(getPermalink(post.title, post.date ? new Date(post.date) : undefined));
+    this.control.setValue('');
+  }
 
-    return this.options.filter(option => option.name.toLowerCase().includes(filterValue));
+  private filter(post: Post) {
+    if (this.control.value && this.control.value.length > 3) {
+      return post.title.toLocaleLowerCase().includes(this.control.value.toLocaleLowerCase())
+    } else {
+      return false;
+    }
   }
 }

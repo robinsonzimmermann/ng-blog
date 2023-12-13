@@ -19,7 +19,7 @@ export class PostsService {
     private authorsService: AuthorsService
   ) {}
 
-  private getAllPosts(): Observable<Post[]> {
+  getAllPosts(): Observable<Post[]> {
     return this.cached; 
   }
 

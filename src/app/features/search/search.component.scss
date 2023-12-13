@@ -3,8 +3,14 @@
   &__field {
     --mdc-filled-text-field-container-color: rgba(255, 255, 255, 0.2);
 
-    ::ng-deep .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+    .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
       top: 37px;
+      font-size: 0.85em;
     }
+
+    .mdc-floating-label .mat-icon {
+      height: .9em;
+    }
+    
   }
 }
