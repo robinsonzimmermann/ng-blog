@@ -64,7 +64,7 @@ export class PostsService {
   getPost(permalink: string | null): Observable<Post | undefined> {
     return this.getAllPosts().pipe(
       map((posts) => posts.find((post) =>
-        getPermalink(post.title, post.date ? new Date(post.date) : undefined) === permalink))
+        getPermalink(post.title, post.date ? new Date(post.date) : undefined, post.category, post.article) === permalink,))
     )
   }
 

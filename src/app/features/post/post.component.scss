@@ -18,16 +18,23 @@
     }
   }
 
+  &__header-authors {
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      gap: 32px;
+    }
+  }
+
   &__content {
     display: grid;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1280px) {
       grid-template-columns: auto  500px;
     }
   }
 
   &__related-posts {
     display: grid;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 480px) {
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }

@@ -9,6 +9,8 @@
 /1950/09/03/of-bytes-and-bard-a-technological-tale-unfoldeth
 /1978/11/05/the-byte-s-banquet-a-silicon-soir-e
 /2023/12/06/the-silicon-soliloquy-a-monologue-in-code
+/principles/innersource
+/principles/software-engineering
 /category/tech-life
 /category/devops
 /category/backend

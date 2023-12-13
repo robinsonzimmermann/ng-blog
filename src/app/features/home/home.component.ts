@@ -45,7 +45,7 @@ export class HomeComponent {
   currentPage$ = this.navigationService.currentPage$;
   featured$: Observable<Post | undefined> = this.postsService.getHighlightedPost();
   posts$: Observable<Posts> = this.currentPage$
-    .pipe(switchMap((page) => this.postsService.getPosts(page)));
+    .pipe(switchMap((page) => this.postsService.getPosts(page, undefined, undefined, this.filterSpecialPosts.bind(this))));
   authors$: Observable<AuthorsList> = this.authorsService.getAuthors();
   categories$: Observable<string[]> = this.postsService.getCategories();
 
@@ -60,5 +60,9 @@ export class HomeComponent {
 
   navigate(page: PageEvent) {
     this.navigationService.navigate(page.pageIndex, this.anchor.first);
+  }
+
+  private filterSpecialPosts(post: Post): boolean {
+    return !['principles'].includes(post.category);
   }
 }

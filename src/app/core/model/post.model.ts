@@ -8,11 +8,11 @@ export interface Post {
   teaser: string;
   date: string | undefined;
   authors: Array<Author | string>;
-  permalink: string;
   featured?: boolean;
   category: Category;
   tags: string[];
   readingTime: string;
+  article: boolean;
 }
 
 export interface Posts {

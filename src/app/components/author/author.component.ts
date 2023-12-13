@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Author } from '../../core/model/author.model';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'blog-author',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgStyle, NgClass],
   templateUrl: './author.component.html',
   styleUrl: './author.component.scss'
 })

@@ -4,5 +4,6 @@ export enum Category {
   'backend' = 'Backend',
   'frontend' = 'Frontend',
   'sdlc' = 'SDLC',
-  'career' = 'Career'
+  'career' = 'Career',
+  'principles' = 'Principles'
 };

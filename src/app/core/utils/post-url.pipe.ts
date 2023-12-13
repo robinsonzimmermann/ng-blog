@@ -8,6 +8,6 @@ import { getPermalink } from '@blog/utils';
 })
 export class PostUrlPipe implements PipeTransform {
   transform(post: Post): string {
-    return getPermalink(post.title, post.date ? new Date(post.date) : undefined);
+    return getPermalink(post.title, post.date ? new Date(post.date) : undefined, post.category, post.article);
   }
 }

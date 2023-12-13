@@ -7,11 +7,14 @@
         </mat-chip-set>
         <h1>{{ post.title }}</h1>
         <h2>{{ post.excerpt }}</h2>
-        @if (authors$ | async; as authors) {
-          @for (author of authors; track $index) {
-            <blog-author [author]="author" size="lg"></blog-author>
+        <span class="muted">{{ post.date | date : 'longDate' }} | {{ post.readingTime }}</span>
+        <div class="post__header-authors">
+          @if (authors$ | async; as authors) {
+            @for (author of authors; track $index) {
+              <blog-author [author]="author" size="lg"></blog-author>
+            }
           }
-        }
+        </div>
       </div>
       <div class="post__header-image">
         <img [src]="post.teaser" alt="">

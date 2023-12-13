@@ -37,6 +37,8 @@ async function moveUnpublishedDirectory(sourcePath, destinationRoot) {
             const destinationPath = path.join(destinationRoot, utils.getPermalink(
                 metaJsonObject.title,
                 new Date(metaJsonObject.date),
+                metaJsonObject.category,
+                metaJsonObject.article,
             ));
     
             // Create the destination directory if it doesn't exist

@@ -10,6 +10,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { IsActiveDirective } from './is-active.directive';
 import { ButtonComponent } from '../../../components/button/button.component';
 import { SearchComponent } from '../../../features/search/search.component';
+import { DarkModeToggleComponent } from '../dark-mode-toggle/dark-mode-toggle.component';
 
 
 @Component({
@@ -27,6 +28,7 @@ import { SearchComponent } from '../../../features/search/search.component';
     IsActiveDirective,
     ButtonComponent,
     SearchComponent,
+    DarkModeToggleComponent,
   ],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss'

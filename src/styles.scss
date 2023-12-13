@@ -137,41 +137,42 @@ $backbase-theme-dark: mat.define-dark-theme((
 
 @include mat.typography-hierarchy($backbase-typography);
 
+.light-theme {
+  @include mat.core-theme($backbase-theme-light);
+  @include mat.all-component-themes($backbase-theme-light);
+
+  --blog-palette-primary: #{mat.get-theme-color($backbase-theme-light, primary)};
+  --blog-palette-gradient-1: rgba(51,102,255,1);
+  --blog-palette-gradient-2: rgba(255,96,71,1);;
+  --blog-palette-gradient-3: rgba(73,164,255,1);
+  --blog-palette-gradient-4: rgba(105,254,255,1);
+  --blog-palette-background: #ffffff;
+  --blog-palette-text: #000000;
+  --blog-palette-neutral: #f3f6f9;
+  --blog-palette-tangerine: #ff6047;
+  --blog-palette-electric: #69ffff;
+  --mat-paginator-container-background-color: var(--blog-palette-background);
+}
+
+.dark-theme {
+  @include mat.core-theme($backbase-theme-dark);
+  @include mat.all-component-themes($backbase-theme-dark);
+
+  --blog-palette-primary: #{mat.get-theme-color($backbase-theme-dark, primary)};
+  --blog-palette-gradient-1: #69feff;
+  --blog-palette-gradient-2: #ff6047;
+  --blog-palette-gradient-3: #69feff;
+  --blog-palette-gradient-4: #ff6047;
+  --blog-palette-background: #{color.mix(#000000, map-get($backbase-secondary, 700), 75%)};
+  --mdc-elevated-card-container-color: var(--blog-palette-background);
+  --blog-palette-text: #ffffff;
+  --blog-palette-neutral: #000000;
+  --blog-palette-tangerine: #ff6047;
+  --blog-palette-electric: #69ffff;
+  --mat-paginator-container-background-color: var(--blog-palette-background);
+}
+
 :root {
-  @media (prefers-color-scheme: light) {
-    @include mat.core-theme($backbase-theme-light);
-    @include mat.all-component-themes($backbase-theme-light);
-  
-    --blog-palette-primary: #{mat.get-theme-color($backbase-theme-light, primary)};
-    --blog-palette-gradient-1: rgba(51,102,255,1);
-    --blog-palette-gradient-2: rgba(255,96,71,1);;
-    --blog-palette-gradient-3: rgba(73,164,255,1);
-    --blog-palette-gradient-4: rgba(105,254,255,1);
-    --blog-palette-background: #ffffff;
-    --blog-palette-text: #000000;
-    --blog-palette-neutral: #f3f6f9;
-    --blog-palette-tangerine: #ff6047;
-    --blog-palette-electric: #69ffff;
-    --mat-paginator-container-background-color: var(--blog-palette-background);
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    @include mat.core-theme($backbase-theme-dark);
-    @include mat.all-component-themes($backbase-theme-dark);
-  
-    --blog-palette-primary: #{mat.get-theme-color($backbase-theme-dark, primary)};
-    --blog-palette-gradient-1: rgba(9,28,53,1);
-    --blog-palette-gradient-2: rgba(80,48,58,1);
-    --blog-palette-gradient-3: rgba(105,254,255,1);
-    --blog-palette-gradient-4: rgba(255,96,71,1);
-    --blog-palette-background: #{color.mix(#000000, map-get($backbase-secondary, 700), 75%)};
-    --mdc-elevated-card-container-color: var(--blog-palette-background);
-    --blog-palette-text: #ffffff;
-    --blog-palette-neutral: #000000;
-    --blog-palette-tangerine: #ff6047;
-    --blog-palette-electric: #69ffff;
-    --mat-paginator-container-background-color: var(--blog-palette-background);
-  }
 
   --mdc-typography-button-font-weight: bold;
   --mdc-elevated-card-container-elevation: none;

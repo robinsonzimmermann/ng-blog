@@ -20,7 +20,7 @@
         </blog-button>
     
         <mat-drawer-container class="">
-          <mat-drawer mode="over" [opened]="menuOpen" class="nav__mobile-menu">
+          <mat-drawer mode="over" [opened]="menuOpen" position="end" class="nav__mobile-menu">
             <div class="close-button-container">
               <button mat-icon-button class="close-button" (click)="menuOpen = false">
                 <mat-icon>close</mat-icon>
@@ -40,8 +40,9 @@
 <ng-template #menu>
   <mat-list>
     <mat-list-item><blog-button><a mat-button routerLink="/" blogIsActive>Blog</a></blog-button></mat-list-item>
-    <mat-list-item><blog-button>blog-button><a mat-button routerLink="principles" blogIsActive>How we do</a></blog-button></mat-list-item>
+    <mat-list-item><blog-button>blog-button><a mat-button routerLink="principles" blogIsActive>Priciples</a></blog-button></mat-list-item>
     <mat-list-item><blog-search></blog-search></mat-list-item>
-    <mat-list-item class="push-right"><blog-button><a mat-stroked-button href="https://backbase.io" target="blank"><span>Backbase.io</span> <mat-icon iconPositionEnd>open_in_new</mat-icon></a></blog-button></mat-list-item>
+    <mat-list-item class="push-right"><blog-dark-mode-toggle></blog-dark-mode-toggle></mat-list-item>
+    <mat-list-item><blog-button><a mat-stroked-button href="https://backbase.io" target="blank"><span>Backbase.io</span> <mat-icon iconPositionEnd>open_in_new</mat-icon></a></blog-button></mat-list-item>
   </mat-list>
 </ng-template>
