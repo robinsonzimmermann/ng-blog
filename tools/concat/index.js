@@ -46,6 +46,15 @@ function main() {
     // Write the sorted array to the output file
     const outputContent = JSON.stringify(filesArray);
     fs.writeFileSync(outputFilePath, outputContent, 'utf8');
+
+    routesArray.push(
+        '/category/tech-life',
+        '/category/devops',
+        '/category/backend',
+        '/category/career',
+        '/category/frontend',
+        '/category/sdlc',
+    )
     fs.writeFileSync('routes.txt', routesArray.join('\r\n'), 'utf8');
 
     console.log(`Scanning completed. Output written to ${outputFilePath}`);

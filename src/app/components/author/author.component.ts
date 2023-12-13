@@ -11,7 +11,6 @@ import { Author } from '../../core/model/author.model';
 })
 export class AuthorComponent {
   @Input('author') set _author(value: Author | string) {
-    console.log(value);
     if (typeof value === 'string') {
       this.author = {
         fullname: value,

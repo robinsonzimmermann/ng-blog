@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { IsActiveDirective } from './is-active.directive';
 import { ButtonComponent } from '../../../components/button/button.component';
+import { SearchComponent } from '../../../features/search/search.component';
 
 
 @Component({
@@ -25,6 +26,7 @@ import { ButtonComponent } from '../../../components/button/button.component';
     MatSidenavModule,
     IsActiveDirective,
     ButtonComponent,
+    SearchComponent,
   ],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss'
