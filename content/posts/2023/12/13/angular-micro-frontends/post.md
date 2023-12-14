@@ -17,7 +17,7 @@ Without delay let's jump into a practical example.
 
 ### Break monolithic app into shell and remote application
 
-![](/assets/monolithic.png)
+![](assets/monolithic.png)
 
 **Convert your existing project to a shell application**
 
@@ -34,7 +34,7 @@ Use relevant version of @angular-architects/module-federation.
 **Note:** the above command generates `webpack.config` and replaces `@angular-devkit/build-angular`
 with `ngx-build-plus` in `angular.json`, to use additional webpack config with angular-cli.
 
-![](/assets/microfrontend.png)
+![](assets/microfrontend.png)
 
 **Create a slot to inject the remote application in the shell application, which is** `<div #vc></div>`
 
@@ -223,7 +223,7 @@ Let's see four different ways to share theming between shell and remote applicat
 - Standalone theme in both shell and remote applications.
 - Standalone theme in shell application and lazy load theme of remote application.
 
-![](/assets/mf-theming.png)
+![](assets/mf-theming.png)
 
 **Solution**: Based on above illustration, the most efficient approach for maintaining consistent CSS is to implement global shared theme.
 
@@ -404,7 +404,7 @@ services:
 
 **Benefits & Drawbacks of using Micro Frontends:**
 
-![](/assets/mf-pros-cons.png)
+![](assets/mf-pros-cons.png)
 
 
 ## Conclusion

@@ -7,7 +7,7 @@
 Right there on your home screen you have meaningful information from your apps without even opening them. It’s meant to save you time and extend your experience. It’s an extension of your application.
 
 
-![widgets](/assets/images/post/3_UxHjauYTAjko.png)
+![widgets](assets/3_UxHjauYTAjko.png)
 
 
 <div align="center">
@@ -40,18 +40,18 @@ Considering we can only have one main account, our widget will show the followin
 
 As a widget can't exist standalone, I've previously built a SwiftUI application to list my accounts - not just the main one. It doesn't do much other than allowing me to show an accounts upon tapping on it and hidding it by tapping again.
 
-![Accounts app](/assets/images/post/04_ios_widget_app.gif)
+![Accounts app](assets/04_ios_widget_app.gif)
 
 ### Setup
 
 We now start by creating a new target of Widget Extension.
-![Widget Target](/assets/images/post/04_ios_widget_new_target.png)
+![Widget Target](assets/04_ios_widget_new_target.png)
 
 During this process, I've named my Widget `CurrentAccount` and disabled `Include Configuration Intent` - as I don't want users to configure/edit the widget but read information from the main account only.
 
 This process will create my target and add the following folder for my project
 
-![Widget Folder](/assets/images/post/04_ios_widget_folder.png)
+![Widget Folder](assets/04_ios_widget_folder.png)
 
 ### Now comes the fun part
 
@@ -137,7 +137,7 @@ As for any other SwiftUI view, we can also preview them in Xcode Canvas. We crea
 
 You can potentially preview multiple `MainAccountEntryView` using different preview contexts, for instance, for the different widget sizes, `.systemSmall`, `.systemMedium` and `.systemLarge`.
 
-![Widget Preview](/assets/images/post/04_ios_widget_preview.png)
+![Widget Preview](assets/04_ios_widget_preview.png)
 
 #### Entry View
 
@@ -157,7 +157,7 @@ It's fairly easy with `supportedFamilies`. Let's add that to our widget:
 
 #### Our widget in action
 
-![Widget Preview](/assets/images/post/04_ios_widget_demo.gif)
+![Widget Preview](assets/04_ios_widget_demo.gif)
 
 ## Conclusion
 

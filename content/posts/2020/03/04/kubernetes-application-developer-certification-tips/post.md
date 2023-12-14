@@ -30,7 +30,7 @@ For something more academic I would recommend following the course:
   body="Want to learn Kubernetes? Get an in-depth primer on this powerful system for managing containerized applications."
   link="https://www.edx.org/course/introduction-to-kubernetes"
   linkLabel="www.edx.org"
-  image="/assets/images/post/0_XDOX4FxMG8-4iWZl.png"
+  image="assets/0_XDOX4FxMG8-4iWZl.png"
 %}
 
 ### Study the curriculum
@@ -74,7 +74,7 @@ In my experience, an online course helped me to prepare for the certification be
   body="Earners of this designation demonstrated the skills and expertise to perform the responsibilities of a Cloud Foundry…"
   link="https://www.youracclaim.com/badges/845a02b0-ba8a-4657-820b-5b833e46142d/linked_in_profile"
   linkLabel="youracclaim.com"
-  image="/assets/images/post/0_fFnZQ4ZmOeR6D9c7.png"
+  image="assets/0_fFnZQ4ZmOeR6D9c7.png"
 %}
 
 And at that time before taking the exam I have followed an online course from The Linux Foundation:
@@ -85,7 +85,7 @@ And at that time before taking the exam I have followed an online course from Th
   body="Businesses around the world need more skilled developers. Update your cloud-native skills with Cloud Foundry training…"
   link="https://training.linuxfoundation.org/training/cloud-foundry-for-developers/"
   linkLabel="training.linuxfoundation.org"
-  image="/assets/images/post/0_4SN57mGsNxgDomXv.png"
+  image="assets/0_4SN57mGsNxgDomXv.png"
 %}
 
 The training was ok and hands-on, with exercises to practice and documentation to study, slides-style, so I decided to do the same for the Kubernetes certification.
@@ -100,7 +100,7 @@ This is the training I’ve followed:
   body="Kubernetes is a high-velocity open source orchestration tool to deploy, scale, and update containerized applications…"
   link="https://training.linuxfoundation.org/training/kubernetes-for-developers/"
   linkLabel="training.linuxfoundation.org"
-  image="/assets/images/post/0_cBOGVm0Bjk95liMH.png"
+  image="assets/0_cBOGVm0Bjk95liMH.png"
 %}
 
 It’s self-paced, contains videos, slides and hands-on labs, you have one year access to the content and you will obtain an official badge (never hurts). Here the course outline:
@@ -148,7 +148,7 @@ Some resources to help you be fast and breath *kubectl*
   body="Kubernetes CKA CKAD Simulator / Example Questions / Practice Exam"
   link="https://killer.sh/ckad"
   linkLabel="killer.sh"
-  image="/assets/images/post/0_3Glp6AXn3hZlIDRD.png"
+  image="assets/0_3Glp6AXn3hZlIDRD.png"
 %}
 
 It’s not free, but I definitely think is totally worth it.
@@ -205,7 +205,7 @@ You’ll receive access to 4 different clusters which multiple namespaces and va
 
 {% include
    components/figure.html
-   url="/assets/images/post/1__70CzlisT3rrbOprVs4wXQ.png"
+   url="assets/1__70CzlisT3rrbOprVs4wXQ.png"
    description="CKAD Clusters"
 %}
 
@@ -343,7 +343,7 @@ you don’t have to get 100% to pass the exam, try to attempt as much as you can
 
 {% include
    components/figure.html
-   url="/assets/images/post/1_MT6vRvUwZxbIsCsgOeMidQ.png"
+   url="assets/1_MT6vRvUwZxbIsCsgOeMidQ.png"
    description="High tech tooling to debug YAML issues"
 %}
 
@@ -415,6 +415,6 @@ In my opinion, the above resources are a good help to pass the exam without issu
 
 Good luck with your exam and if you pass it, come back and share your badge!
 
-![](/assets/images/post/1_KjxjnnQLnPaQWtAiPmG1uw.png)
+![](assets/1_KjxjnnQLnPaQWtAiPmG1uw.png)
 
 

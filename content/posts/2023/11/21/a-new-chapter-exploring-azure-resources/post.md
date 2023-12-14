@@ -17,15 +17,15 @@
 <br>
     Example: amazon web services, microsoft azure, and google compute engine
 
-![](/assets/cloud-iaas.png)
+![](assets/cloud-iaas.png)
 
 - **Platform as a Service (PaaS):** A platform with development tools, databases, and runtime environments, simplifying application development and deployment.
 
-![](/assets/cloud-paas.png)
+![](assets/cloud-paas.png)
 
 - **Software as a Service (SaaS):** Ready-to-use software applications accessible via the internet, eliminating installation and maintenance hassles.
 
-![](/assets/cloud-saas.png)
+![](assets/cloud-saas.png)
 
 
 **Benefits of Cloud Computing:**
@@ -35,7 +35,7 @@
 
 ## **Cloud Showdown: Visualizing AWS and Azure Resources**
 
-![](/assets/aws-azure.png)
+![](assets/aws-azure.png)
 
 ## **Exploring Azure Services: A Journey into Cloud Innovations**
 

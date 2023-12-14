@@ -15,14 +15,14 @@ The official description for Netflix Eureka, as per their [GitHub repository](ht
 Talking to the pentester’s community, it seems quite common to encounter the registry service “outside”, which is a common potential security misconfiguration.
 
 Now, checking how many Eureka servers can be found by Google (you probably can improve this dork):
-![Google dork](/assets/images/post/hacking-netflix-eureka/google-dork.png)
+![Google dork](assets/images/post/hacking-netflix-eureka/google-dork.png)
 
 
 ## Find me a microservice!
 
 Let’s start with some basics to understand how it works based on test lab example:
 
-![find me microservice](/assets/images/post/hacking-netflix-eureka/find-me-microservice.png)
+![find me microservice](assets/images/post/hacking-netflix-eureka/find-me-microservice.png)
 
 Suppose we have the following:
 
@@ -82,31 +82,31 @@ At this point, multiple security issues arise.
 
 ### Attack Vector 1: Server Side Request Forgery
 
-![Attack vector 1](/assets/images/post/hacking-netflix-eureka/attack-vector1.png)
+![Attack vector 1](assets/images/post/hacking-netflix-eureka/attack-vector1.png)
 
 For successful exploitation, we need to find a service mapped to root URL `“/”` (which is not really a requirement but provides more freedom in path walking). For the lab environment, *Spring Cloud Gateway* already maps `“/”` to *webservice*.
 
 At first, find the address of the targeted micro-service to get access to (**secretservice**), you can find it on the registry:
-![regisrty before attack](/assets/images/post/hacking-netflix-eureka/registry-before-attack.png)
+![regisrty before attack](assets/images/post/hacking-netflix-eureka/registry-before-attack.png)
 
 Then register new microservice with name **webservice** but with `_address:port_` of **secretservice** (to do this change `ipAddr`, `hostName` and port parameters in eureka registration request):
 
-![registry-after-ssrf-attack](/assets/images/post/hacking-netflix-eureka/registry-after-ssrf-attack.png)
+![registry-after-ssrf-attack](assets/images/post/hacking-netflix-eureka/registry-after-ssrf-attack.png)
 
 Now there are 2 instances of **webservice**. After **gateway** synced information from the **registry**, it begins to balance attacker requests between 2 instances of **webservice**. And due to one of the instances points to **secretservice** now, we bypass route restriction on HTTP layer and successfully perform SSRF attack.
 
 In case of a successful attack, you will see 2 different pages during multiple requests, 404 error (because there is no route for `_/flag_` on legit **webservice**) and `"FLAG{EUREKA_PWNED}"`:
-![white label error](/assets/images/post/hacking-netflix-eureka/whitelabel-error.png)
+![white label error](assets/images/post/hacking-netflix-eureka/whitelabel-error.png)
 
-![flag pwned](/assets/images/post/hacking-netflix-eureka/flag-pwned.png)
+![flag pwned](assets/images/post/hacking-netflix-eureka/flag-pwned.png)
 
 ### Attack Vector 2: Traffic Hijack and XSS
 
-![attack vector 2](/assets/images/post/hacking-netflix-eureka/attack-vector2.png)
+![attack vector 2](assets/images/post/hacking-netflix-eureka/attack-vector2.png)
 
 In another scenario, what if an attacker will register an instance of **webservice** and point it to the malicious server? In this case, the **gateway** will begin to route HTTP traffic to the attacker-controlled server. This leads to secrets leakage (i.e.: `token` or `sessionId`) and XSS. For the browser, because the communication with the malicious server is performed in the backchannel, it looks like an official site (TLS on Gateway doesn’t help).
 
-![xss](/assets/images/post/hacking-netflix-eureka/xss.png) 
+![xss](assets/images/post/hacking-netflix-eureka/xss.png) 
 
 We can do the same trick by hijacking internal services calls, leading to information leaking or even more critical vulnerabilities.
 

@@ -21,7 +21,7 @@ Why? they are type-safe, IDE intelli-sense support, manageable in terms of upgra
 
 ## **The big picture**
 
-![](/assets/images/post/2_XHya6aMkqGtYUjSAD.png)
+![](assets/2_XHya6aMkqGtYUjSAD.png)
 
 Not really that big, but here’s how this is achieved:
 
@@ -39,7 +39,7 @@ As per the requirements, we need to provide an accelerator solution, where devel
 
 # **Configuration-driven UI with Epoxy**
 
-![](/assets/images/post/2_TGUBANjniuayIUTIYOPahJN.png)
+![](assets/2_TGUBANjniuayIUTIYOPahJN.png)
 
 For a better explanation, why not show code? Let’s build a simple payment transfer screen, which will allow users to choose an account, a contact, enter the amount and hit pay!
 
@@ -91,7 +91,7 @@ What if Compose becomes the default way to create UI components in Android? (May
 
 ## **Configuration-driven UI with Jetpack Compose**
 
-![](/assets/images/post/2_YbhKAUOMxx5167A.png)
+![](assets/2_YbhKAUOMxx5167A.png)
 
 * To migrate from epoxy, our Sealed class implementation of the layout is the key. Instead of using `StackLayout` we add a new implementation in place - `ComposeLayout`.
 

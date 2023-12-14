@@ -3,7 +3,7 @@
 
 Firstly, we need to know what Fragments in Android are.
 
-![Reusable containers](assets/images/post/containers.jpeg)
+![Reusable containers](assets/containers.jpeg)
 
 
 Fragments are reusable containers within our app allowing us to present the same user interface layout in a variety of activities and layout configurations. Given the versatility of fragments, it's important to validate that they provide a consistent and resource-efficient experience.
@@ -20,7 +20,7 @@ To perform Fragments testing we have such helper as AndroidX "fragment-testing" 
 ## 0. Before
 I'm going to use our test Application to showcase. It's called Jukebox (and was created by our awesome android developer Kunal Jadhav). It's a simple application but ideal for a demo. Let's have a look at it.
 
-![E2E Test](assets/images/post/E2E_test.gif)
+![E2E Test](assets/E2E_test.gif)
 
 As you can see we have Login, Playing Now, Most Popular and More Menu Screens.
 
@@ -105,10 +105,7 @@ In the test we check whether the title is there displaying the text specified in
 
 ## 3. Results
 
-<figure class="figure d-block text-center mb-4">
-  <img class="figure-img img-fluid" src="/assets/images/post/fragment_test.gif" style="max-width: 220px">
-  <figcaption class="figure-caption">Fragment Test</figcaption>
-</figure>
+![Fragment Test](assets/fragment_test.gif)
 
 Looks pretty nice (if you don't blink) :)
 
@@ -119,7 +116,7 @@ Testing android Fragments in isolation gives us time to d̶r̶i̶n̶k̶ ̶c̶o̶
 I've made the same test but as E2E. You can see the results below.
 
 
-![](assets/images/post/e2e_fragment_results.png)
+![](assets/e2e_fragment_results.png)
 
 
 The same checks are done using the different approaches. Fragment test is more than 5 times faster, and we avoid possible fails during test execution. Sounds amazing. If we think about the scalability of these tests then the results are even more impressive.

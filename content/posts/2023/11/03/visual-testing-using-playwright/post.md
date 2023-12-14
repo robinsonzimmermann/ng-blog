@@ -22,7 +22,7 @@ Visual testing also aims to verify that the app’s **visual elements** like **c
 
 **Example 1:- Element Overlap Scenario**
 
-![](/assets/visual-testing1.png")
+![](assets/visual-testing1.png")
 
 Look at this UI, how did this happen in production?
 The text and advertisement are crammed together. If this was your advertisement, do you think there would be a revenue impact? Absolutely.
@@ -37,14 +37,14 @@ Visual bugs are rendering issues. And rendering validation is not what functiona
 
 **Example 2:- Different visual bugs on each case**
 
-![](/assets/visual-testing2.png")
+![](assets/visual-testing2.png")
 
 In the preceding example each snapshot has rendered with different visual error.
 
 ## **How can Visual Testing help?**
 
 
-![Visual aspects of the quality](/assets/visual-testing3.png")
+![Visual aspects of the quality](assets/visual-testing3.png")
 
 **Benefits of Visual Testing**
 
@@ -61,7 +61,7 @@ Functional test scripts can validate the size, position, and color scheme of vis
 
 Let’s look at an Instagram advertisement screen that’s properly rendered:
 
-![Advertisement screen that has properly rendered](/assets/visual-testing4.png")
+![Advertisement screen that has properly rendered](assets/visual-testing4.png")
 
 If we look at the advertisement, there are 21 visual elements, like various icons, text —this ignores iOS elements at the top like Wi-Fi signal and time, since those aren’t controlled by the Instagram app.
 
@@ -88,7 +88,7 @@ For each combination of **OS/browser/font size/screen size/screen orientation**.
 
 Manual visual testing means comparing two screenshots manually, one from your known good baseline image, and another from the latest version of your app. For each pair of images, you have to invest a lot of time to ensure you’ve caught all issues. Especially if the page is long, or has a lot of visual elements, in that case it is very difficult to identify all the visual issues. 
 
-![Manual Visual Identification of the elements](/assets/visual-testing5.png")
+![Manual Visual Identification of the elements](assets/visual-testing5.png")
 
 **Challenges of manual Visual Testing:-**
 Imagine you need to test your app on:
@@ -131,11 +131,11 @@ To address the preceding challenges, automated visual testing needs to be implem
 
 **Snapshot Comparison Workflow:**
 
-![](/assets/visual-testing6.png")
+![](assets/visual-testing6.png")
 
 **Simple Visual Snapshot Comparison Tests in Playwright:**
 
-![](/assets/visual-testing7.png")
+![](assets/visual-testing7.png")
 
 When the **toHaveScreenshot()** function executes, it performs the following:
 
@@ -147,9 +147,9 @@ When the **toHaveScreenshot()** function executes, it performs the following:
 - It computes the difference again
 - It writes an expected, actual, and diff file to the test-results folder
 
-![](/assets/visual-testing8.png")
+![](assets/visual-testing8.png")
 
-![](/assets/visual-testing9.png")
+![](assets/visual-testing9.png")
 
 ## **Key benefits/take-aways from Visual Testing Approach**
 
