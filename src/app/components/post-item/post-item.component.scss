@@ -13,7 +13,7 @@
     width: 100%;
   }
   
-  mat-card-actions {
+  &__actions {
     display: flex;
     margin-top: auto;
   }
@@ -26,5 +26,10 @@
   .muted {
     font-size: .85em;
     color: #999999;
+  }
+
+  &__header {
+    padding: 0;
+    margin-bottom: 8px;
   }
 }

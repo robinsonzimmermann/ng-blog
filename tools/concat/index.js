@@ -61,7 +61,3 @@ function main() {
 }
 
 main();
-
-function loadEsmModule(modulePath) {
-return new Function('modulePath', `return import(modulePath);`)(modulePath);
-}

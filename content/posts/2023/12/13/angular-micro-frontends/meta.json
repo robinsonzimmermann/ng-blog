@@ -1,0 +1,9 @@
+{
+  "title": "Angular & Micro Frontends",
+  "excerpt": "Micro Frontends is a modern architectural approach for developing web applications.",
+  "teaser": "assets/angular_microfrontends.png",
+  "authors": ["Harsh Julka"],
+  "category": "frontend",
+  "tags": ["web","angular","microfrontends","federation","frontend"],
+  "date": "2023-12-13"
+}

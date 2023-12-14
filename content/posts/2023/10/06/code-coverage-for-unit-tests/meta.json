@@ -1,0 +1,9 @@
+{
+  "title": "Code Coverage for Unit Tests",
+  "excerpt": "Code coverage helps in the easy maintenance of the codebase, exposure of bad code, and results in faster time to market",
+  "teaser": "assets/code-coverage/code_coverage.png",
+  "authors": ["Rafael Nascimento"],
+  "category": "qa",
+  "tags": ["qa","mobile","android","iOS","tests","testing","web","unit testing"],
+  "date": "2023-10-06"
+}

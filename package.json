@@ -3,14 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run posts:update && ng serve",
     "build": "ng build",
     "build:utils": "ng build utils",
-    "build:posts": "node tools/concat",
     "build:all": "npm run build:utils && npm run build:posts && npm run build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "posts:publish": "node --experimental-specifier-resolution=node tools/publish",
+    "posts:update": "node tools/concat",
     "posts:new": "ng generate ./tools/post-scaffolder:post-scaffolder",
     "preposts:new": "cd tools/post-scaffolder && npm i && npm run build"
   },

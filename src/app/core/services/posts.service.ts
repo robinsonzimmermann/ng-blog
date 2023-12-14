@@ -24,14 +24,16 @@ export class PostsService {
   }
 
   getHighlightedPost(): Observable<Post | undefined> {
-    return this.getAllPosts().pipe(map((posts) => posts.find((featured) => featured) || posts[0]));
+    return this.getAllPosts().pipe(
+      map((posts) => posts.find(({ featured }) => featured) || posts.find(({ article }) => !article))
+    );
   }
 
   getPosts(
     offset: number = 0,
     size: number = POSTS_PER_PAGE,
     filterFeatured: boolean = true,
-    filterFn?: (posts: Post) => boolean,
+    filterFn?: (post: Post) => boolean,
   ): Observable<Posts> {
     return this.getAllPosts().pipe(
       withLatestFrom(
@@ -62,23 +64,13 @@ export class PostsService {
   }
 
   getPost(permalink: string | null): Observable<Post | undefined> {
-    return this.getAllPosts().pipe(
-      map((posts) => posts.find((post) =>
-        getPermalink(post.title, post.date ? new Date(post.date) : undefined, post.category, post.article) === permalink,))
-    )
+    const filterByPermalink = (post: Post) => getPermalink(post.title, post.date ? new Date(post.date) : undefined, post.category, post.article) === permalink;
+    return this.getPosts(0, 1, false, (post: Post) => filterByPermalink(post)).pipe(map(({ posts }) => posts[0]))
   }
 
   getCategories(): Observable<Category[]> {
     return this.getAllPosts().pipe(
       map((posts) => [...new Set(posts.reduce((acc: Category[], curr: Post) => [...acc, curr.category], []))])
     )
-  }
-
-  getRelatedPosts(post: Post): Observable<Post[]> {
-    return this.getAllPosts()
-      .pipe(
-        map((posts) => posts.filter(({ category, title }) => category === post.category && title !== post.title)),
-        map((posts) => posts.slice(0, 3))
-      )
   }
 }

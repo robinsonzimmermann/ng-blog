@@ -1,0 +1,9 @@
+{
+  "title": "Visual Testing using Playwright",
+  "excerpt": "Visual testing helps to find issues that are important for end-users that cannot be caught by other types of testing",
+  "teaser": "/assets/visual-testing-banner.png",
+  "authors": ["Venkata Ravi Majjari"],
+  "category": "qa",
+  "tags": ["testing","quality assurance","qa","quality"],
+  "date": "2023-11-03"
+}

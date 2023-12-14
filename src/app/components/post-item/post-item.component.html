@@ -1,5 +1,5 @@
 <mat-card matRipple data-role="button" class="item-card" (click)="navigate()">
-  <mat-card-header>
+  <mat-card-header class="item-card__header">
     <img mat-card-image [src]="post.teaser" alt="">
   </mat-card-header>
   
@@ -8,7 +8,12 @@
       <mat-chip data-role="button">{{ Category[post.category] }}</mat-chip>
     </mat-chip-set>
     <mat-card-title>{{ post.title }}</mat-card-title>
-    <span class="muted">{{ post.date | date : 'longDate' }} | {{ post.readingTime }}</span>
+    <span class="muted">
+      @if (post.date) {
+        {{ post.date | date : 'longDate' }} |
+      }
+      {{ post.readingTime }}
+    </span>
     <p>
       {{ post.excerpt }}
     </p>
@@ -18,7 +23,7 @@
       }
     </div>
   </mat-card-content>
-  <mat-card-actions>
+  <mat-card-actions class="item-card__actions">
     <blog-read-more-button [link]="post | postUrl"></blog-read-more-button>
   </mat-card-actions>
 </mat-card>

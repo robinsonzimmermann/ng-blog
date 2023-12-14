@@ -26,7 +26,7 @@ async function moveUnpublishedDirectory(sourcePath, destinationRoot) {
         const unpublishedPath = path.join(sourcePath, articlePath);
         const metaFilePath = path.join(unpublishedPath, 'meta.json');
 
-        const utils = await loadEsmModule('../../dist/utils');
+        const utils = await loadEsmModule('../../dist/utils/esm2022/lib/permalink.mjs');
 
         if (fs.existsSync(metaFilePath)) {
             updateMetaDate(metaFilePath);
@@ -77,5 +77,5 @@ function main() {
 main();
 
 function loadEsmModule(modulePath) {
-return new Function('modulePath', `return import(modulePath);`)(modulePath);
+    return new Function('modulePath', `return import(modulePath);`)(modulePath);
 }

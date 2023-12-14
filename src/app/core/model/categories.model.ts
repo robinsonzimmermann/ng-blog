@@ -5,5 +5,7 @@ export enum Category {
   'frontend' = 'Frontend',
   'sdlc' = 'SDLC',
   'career' = 'Career',
-  'principles' = 'Principles'
+  'principles' = 'Principles',
+  'qa' = 'Quality Assurance',
+  'mobile' = 'Mobile'
 };

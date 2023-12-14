@@ -1,0 +1,9 @@
+{
+  "title": "Kubernetes Application Developer Certification Tips",
+  "excerpt": "I just passed the CKAD exam: And I want to share my journey and some tips and recommendations on how to handle the exam itself.",
+  "teaser": "assets/kubernetes-banner.png",
+  "authors": ["Andrés Torres"],
+  "category": "devops",
+  "tags": ["ckad","kubernetes","certification","certified","k8s"],
+  "date": "2020-03-04"
+}

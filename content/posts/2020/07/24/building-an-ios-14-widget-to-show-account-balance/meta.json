@@ -1,0 +1,9 @@
+{
+  "title": "Building an iOS 14 Widget to Show Account Balance",
+  "excerpt": "WWDC20 has introduced us to iOS 14, which along other features now include widgets on the home screen",
+  "teaser": "assets/ios-widget-banner.png",
+  "authors": ["Arthur Alves"],
+  "category": "mobile",
+  "tags": ["mobile","ios14","ios","swift","widget"],
+  "date": "2020-07-24"
+}
