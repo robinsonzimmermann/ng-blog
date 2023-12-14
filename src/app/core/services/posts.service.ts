@@ -65,12 +65,17 @@ export class PostsService {
 
   getPost(permalink: string | null): Observable<Post | undefined> {
     const filterByPermalink = (post: Post) => getPermalink(post.title, post.date ? new Date(post.date) : undefined, post.category, post.article) === permalink;
-    return this.getPosts(0, 1, false, (post: Post) => filterByPermalink(post)).pipe(map(({ posts }) => posts[0]))
+    return this.getPosts(0, 1, false, (post: Post) => filterByPermalink(post)).pipe(map(({ posts }) => posts[0]));
   }
 
   getCategories(): Observable<Category[]> {
     return this.getAllPosts().pipe(
-      map((posts) => [...new Set(posts.reduce((acc: Category[], curr: Post) => [...acc, curr.category], []))])
-    )
+      map((posts) => {
+        const categories = posts.reduce((acc: { [category: string]: number }, curr: Post) =>
+          ({ ...acc, [curr.category]: (acc[curr.category] || 0) + 1 }), {});
+        const entries = Object.entries(categories);
+        return entries.sort((a, b) => b[1] - a[1]).map((entry) => entry[0] as Category);
+      })
+    );
   }
 }
