@@ -1,6 +1,6 @@
-import { Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Observable, switchMap, tap } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
 import { Post, Posts } from '../../core/model/post.model';
 import { PostsService } from '../../core/services/posts.service';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
@@ -15,9 +15,9 @@ import { AuthorsService } from '../../core/services/authors.service';
 import { DividerComponent } from '../../components/divider/divider.component';
 import { PostAuthorsPipe } from '../../core/utils/post-authors.pipe';
 import { GradientComponent } from '../../components/gradient/gradient.component';
-import { CategoriesTabComponent } from '../categories-tab/categories-tab.component';
 import { PostsListComponent } from '../../components/posts-list/posts-list.component';
 import { NavigationService } from '../../core/services/navigation.service';
+import { CategoriesTabComponent } from '../../core/layout/categories-tab/categories-tab.component';
 
 @Component({
   selector: 'blog-home',
@@ -49,9 +49,6 @@ export class HomeComponent {
   authors$: Observable<AuthorsList> = this.authorsService.getAuthors();
   categories$: Observable<string[]> = this.postsService.getCategories();
 
-  @ViewChildren(PostsListComponent, { read: ElementRef<PostsListComponent> })
-  anchor!: QueryList<ElementRef<PostsListComponent>>;
-
   constructor(
     private postsService: PostsService,
     private authorsService: AuthorsService,
@@ -59,7 +56,7 @@ export class HomeComponent {
   ) {}
 
   navigate(page: PageEvent) {
-    this.navigationService.navigate(page.pageIndex, this.anchor.first);
+    this.navigationService.navigate(page.pageIndex);
   }
 
   private filterSpecialPosts(post: Post): boolean {

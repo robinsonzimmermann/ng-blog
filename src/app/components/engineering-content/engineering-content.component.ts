@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'blog-engineering-content',
@@ -11,6 +12,9 @@ import { MatRippleModule } from '@angular/material/core';
   styleUrl: './engineering-content.component.scss'
 })
 export class EngineeringContentComponent {
-  navigate() {
+  constructor(private router: Router) {}
+
+  navigate(url: string) {
+    this.router.navigateByUrl(url);
   }
 }

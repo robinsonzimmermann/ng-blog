@@ -66,8 +66,6 @@ export class PostComponent implements OnInit {
   ngOnInit() {
     this.markdownPath =
       `${this.activatedRoute.snapshot.url.map(({ path }) => path).join('/')}/post.md`;
-
-    console.log(this.markdownPath);
   }
 
   navigate(path: string) {

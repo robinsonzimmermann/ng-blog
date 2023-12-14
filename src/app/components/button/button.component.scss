@@ -1,3 +1,8 @@
-.mdc-button {
-  --mdc-outlined-button-container-shape: 2px;
+blog-button {
+  .mdc-button.mat-mdc-button-base {
+    --mdc-filled-button-container-shape: 2px;
+    --mdc-outlined-button-container-shape: 2px;
+    --mdc-filled-button-container-height: 42px;
+    --mdc-outlined-button-container-height: 42px;
+  }
 }

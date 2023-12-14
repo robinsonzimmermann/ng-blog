@@ -12,9 +12,11 @@
     <p>
       {{ post.excerpt }}
     </p>
-    @for (author of post.authors; track $index) {
-      <blog-author [author]="author"></blog-author>
-    }
+    <div class="item-card__authors">
+      @for (author of post.authors; track $index) {
+        <blog-author [author]="author"></blog-author>
+      }
+    </div>
   </mat-card-content>
   <mat-card-actions>
     <blog-read-more-button [link]="post | postUrl"></blog-read-more-button>

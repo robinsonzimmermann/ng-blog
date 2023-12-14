@@ -9,7 +9,7 @@
   <blog-categories-tab></blog-categories-tab>
 
   @if (posts$ | async; as posts) {
-    <div class="home__grid-container center-container">
+    <div class="home__grid-container center-container" id="list">
       <blog-posts-list [posts]="posts.posts"></blog-posts-list>
     </div>
 

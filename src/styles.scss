@@ -173,11 +173,11 @@ $backbase-theme-dark: mat.define-dark-theme((
 }
 
 :root {
-
   --mdc-typography-button-font-weight: bold;
   --mdc-elevated-card-container-elevation: none;
   --mdc-elevated-card-container-shape: 0;
   --mdc-outlined-button-container-height: 50px;
+  --mdc-typography-button-letter-spacing: .03em;
 
   .mat-mdc-card {
     --mdc-elevated-card-container-elevation: 0;

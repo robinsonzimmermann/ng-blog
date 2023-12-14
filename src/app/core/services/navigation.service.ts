@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { ElementRef, Inject, Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
@@ -21,7 +21,7 @@ export class NavigationService {
     }
   }
 
-  navigate(pageIndex: number, anchor?: ElementRef<any>) {
+  navigate(pageIndex: number) {
     this.currentPage$$.next(pageIndex);
     this.router.navigate(
       [], 
@@ -31,8 +31,8 @@ export class NavigationService {
           p: pageIndex + 1,
         }, 
         queryParamsHandling: 'merge',
+        fragment: 'list'
       }
     );
-    this.document.defaultView?.window.scrollTo({ top: anchor ? anchor.nativeElement.offsetTop : 0 });
   }
 }

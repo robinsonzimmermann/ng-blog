@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { PostsService } from '../../core/services/posts.service';
-import { CategoriesComponent } from '../../components/categories/categories.component';
 import { AsyncPipe } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Category } from '../../core/model/categories.model';
+import { CategoriesComponent } from '../../../components/categories/categories.component';
+import { Category } from '../../model/categories.model';
+import { PostsService } from '../../services/posts.service';
 
 @Component({
   selector: 'blog-categories-tab',

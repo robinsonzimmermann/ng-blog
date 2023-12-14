@@ -1,22 +1,30 @@
-.mdc-card {
-  height: 100%;
-}
+.item-card {
+  &__authors {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
 
-.mdc-card__media {
-  width: 100%;
-}
-
-mat-card-actions {
-  display: flex;
-  margin-top: auto;
-}
-
-.mat-mdc-chip.mat-mdc-standard-chip {
-  --mdc-chip-label-text-size: .8em;
-  --mdc-chip-container-height: 22px;
-}
-
-.muted {
-  font-size: .85em;
-  color: #999999;
+  .mdc-card {
+    height: 100%;
+  }
+  
+  .mdc-card__media {
+    width: 100%;
+  }
+  
+  mat-card-actions {
+    display: flex;
+    margin-top: auto;
+  }
+  
+  .mat-mdc-chip.mat-mdc-standard-chip {
+    --mdc-chip-label-text-size: .8em;
+    --mdc-chip-container-height: 22px;
+  }
+  
+  .muted {
+    font-size: .85em;
+    color: #999999;
+  }
 }
