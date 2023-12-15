@@ -112,6 +112,8 @@ $backbase-accent-dark: mat.define-palette($backbase-accent, 400);
 $backbase-typography: mat.define-typography-config(
   $font-family: 'Libre Franklin',
   $headline-5: mat.define-typography-level(4em, 1, 700),
+  $subtitle-1: mat.define-typography-level(1.2em, 1, 700),
+  $subtitle-2: mat.define-typography-level(1em, 1, 700),
   $body-2: mat.define-typography-level(16px, 1.5, 400),
 );
 
@@ -221,4 +223,10 @@ blog-root {
 
 .hide {
   display: none !important;
+}
+
+a {
+  .external {
+    font-size: 1em;
+  }
 }

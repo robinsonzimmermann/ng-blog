@@ -28,7 +28,7 @@ ng add @angular-architects/module-federation@<version> --project projectName --p
 ```
 
 Use relevant version of @angular-architects/module-federation.
-<a href="https://www.npmjs.com/package/@angular-architects/module-federation#which-version-to-use" target="_blank">Check version compatibility here.</a>
+[Check version compatibility here.](https://www.npmjs.com/package/@angular-architects/module-federation#which-version-to-use)
 
 
 **Note:** the above command generates `webpack.config` and replaces `@angular-devkit/build-angular`

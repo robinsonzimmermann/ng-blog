@@ -13,9 +13,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     NavigationComponent,
     FooterComponent,
     RouterOutlet,
-    MatToolbarModule],
+    MatToolbarModule
+  ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'blog';

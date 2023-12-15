@@ -1,8 +1,9 @@
 .post {
   &__header {
-    margin: 16px 0 16px;
+    margin: 3rem 0 3rem;
     @media screen and (min-width: 768px) {
       display: flex;
+      gap: 1rem;
   
       &-content {
         display: flex;
@@ -18,6 +19,11 @@
     }
   }
 
+  &__header-info {
+    margin-bottom: 1rem;
+    color: #999999;
+  }
+
   &__header-authors {
     @media screen and (min-width: 1024px) {
       display: flex;
@@ -26,9 +32,12 @@
   }
 
   &__content {
-    display: grid;
+    display: flex;
     @media screen and (min-width: 1280px) {
-      grid-template-columns: auto  500px;
+      padding-left: 10%;
+      gap: 1rem;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
     }
   }
 
@@ -38,5 +47,9 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
+  }
+
+  &__content-text {
+    max-width: 720px;
   }
 }
