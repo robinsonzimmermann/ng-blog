@@ -53,3 +53,14 @@
     max-width: 720px;
   }
 }
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+blog-table-of-content ::ng-deep .mat-tree-node,
+markdown ::ng-deep {
+  line-height: 2;
+  font-size: 1.2em;
+}

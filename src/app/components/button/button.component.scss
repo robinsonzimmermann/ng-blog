@@ -5,4 +5,8 @@ blog-button {
     --mdc-filled-button-container-height: 42px;
     --mdc-outlined-button-container-height: 42px;
   }
+
+  .mdc-button.mat-mdc-outlined-button.mat-accent {
+    --mdc-outlined-button-outline-color: var(--mdc-outlined-button-label-text-color);
+  }
 }

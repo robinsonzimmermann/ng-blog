@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { Observable, filter, map, switchMap } from 'rxjs';
 import { Post } from '../../core/model/post.model';
 import { PostsService } from '../../core/services/posts.service';
@@ -47,11 +47,13 @@ export class PostComponent implements OnInit {
 
   tableOfContent: HeaderNode[] = [];
 
+
   constructor(
     private postsService: PostsService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private markdownService: MarkdownService
+    private markdownService: MarkdownService,
+    @Inject(DOCUMENT) private document: Document,
   ) {}
 
   ngOnInit() {
@@ -64,40 +66,26 @@ export class PostComponent implements OnInit {
   }
 
   onLoad(markdown: string) {
-    const regExp = new RegExp(/<h(\d).+id="([^"]+)[^>]+>([^<]+)/gm);
-    const matches = this.markdownService.parse(markdown).toString().matchAll(regExp);
-    const headers: Header[] = [];
-    for (const match of matches) {
-      headers.push({
-        level: Number(match[1]),
-        id: match[2],
-        heading: match[3],
-      });
-    }
+    const regExp = new RegExp(/<h\d(.*?)<\/h\d>/gm);
+    const matches = this.markdownService.parse(markdown).toString().match(regExp);
 
-    this.tableOfContent = [
-      {
-        heading: 'Introduction',
-        id: 'introduction',
-        level: 2,
-        children: [
-          {
-            heading: 'Break monolithic app into shell and remote application',
-            id: 'break-monolithic-app-into-shell-and-remote-application',
-            level: 3
-          }
-        ]
-      },
-      {
-        heading: 'Conclusion',
-        id: 'conclusion',
-        level: 2,
-      },
-      {
-        heading: 'References and Additional Resources',
-        id: 'references-and-additional-resources',
-        level: 2,
+    let current: HeaderNode;
+    this.tableOfContent = [];
+    matches?.forEach((match) => {
+      const div = this.document.createElement('div');
+      div.innerHTML = match;
+      const header: Header = {
+        id: div.firstElementChild?.getAttribute('id') as string,
+        heading: div.textContent as string,
+        level: Number(div?.firstElementChild?.tagName.replace(/\D/g, '')),
+      };
+      if (!current || header.level >= current.level) {
+        current = { ...header, children: []};
+        this.tableOfContent.push(current);
+        return;
       }
-    ]
+      current.children.push({ ...header, children: []});
+    });
+
   }
 }

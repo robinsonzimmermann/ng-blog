@@ -18,7 +18,9 @@ export default function(markdownService: MarkdownService, document: Document) {
     `;
   };
   markdownService.renderer.heading = (text: string, level: number, raw: string ) => {
-    const id = text.toLocaleLowerCase().replace(/\W/gm, '-');
+    var auxDiv = document.createElement('div');
+    auxDiv.innerHTML = text;
+    const id = auxDiv.textContent?.toLocaleLowerCase().replace(/\W/gm, '-');
     return `
       <h${level > 1 ? level : 2} id="${id}">${text}</h${level}>
     `;

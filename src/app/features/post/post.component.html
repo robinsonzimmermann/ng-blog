@@ -1,6 +1,6 @@
 <div class="post">
   @if (post$ | async; as post) {
-    <header class="post__header">
+    <header id="post-header" class="post__header">
       <div class="post__header-content">
         <mat-chip-set aria-label="Category selection">
           <mat-chip data-role="button" (click)="navigate('category/' + post.category)">{{ Category[post.category] }}</mat-chip>
@@ -27,6 +27,7 @@
       <div class="post__content-table">
         @if (tableOfContent.length) {
           <blog-table-of-content
+            class="sticky"
             [headers]="tableOfContent"
           ></blog-table-of-content>
         }

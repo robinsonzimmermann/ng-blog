@@ -2,7 +2,7 @@ export interface HeaderNode {
   heading: string;
   level: number;
   id: string;
-  children?: HeaderNode[];
+  children: HeaderNode[];
 }
 
 export interface HeaderTreeNode {

@@ -104,6 +104,7 @@ $backbase-accent: (
 );
 
 $backbase-primary-light: mat.define-palette($backbase-primary, 500);
+$backbase-secondary-light: mat.define-palette($backbase-secondary, 900);
 $backbase-accent-light: mat.define-palette($backbase-accent, 400);
 
 $backbase-primary-dark: mat.define-palette($backbase-electric, 200);
@@ -144,6 +145,8 @@ $backbase-theme-dark: mat.define-dark-theme((
   @include mat.all-component-themes($backbase-theme-light);
 
   --blog-palette-primary: #{mat.get-theme-color($backbase-theme-light, primary)};
+  --blog-palette-secondary: #{map-get($backbase-secondary-light, default)};
+  --blog-palette-secondary-contrast: #{map-get($backbase-secondary-light, default-contrast)};
   --blog-palette-gradient-1: rgba(51,102,255,1);
   --blog-palette-gradient-2: rgba(255,96,71,1);;
   --blog-palette-gradient-3: rgba(73,164,255,1);
@@ -228,5 +231,14 @@ blog-root {
 a {
   .external {
     font-size: 1em;
+  }
+
+  &,
+  &:active,
+  &:visited,
+  &:focus,
+  &:hover {
+    color: var(--blog-palette-text);
+    text-decoration-thickness: 2px;
   }
 }

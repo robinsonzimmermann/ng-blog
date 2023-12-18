@@ -2,7 +2,7 @@
 
 By testing **early and often**, a project can reduce the number of bugs and increase the quality of the code.
 
-![](assets/images/post/shift-left-intro.png)
+![](assets/shift-left-intro.png)
 
 ## **Traditional Quality Model vs Shift Left Model**
 
@@ -16,7 +16,7 @@ When testing is paused until the end of development, any bugs that do show up wi
 
 Worst case, developers have to redesign the application.
 
-![Traditional vs Shift Left Quality Model](assets/images/post/shift-left2.png)
+![Traditional vs Shift Left Quality Model](assets/shift-left2.png)
 
 So, here we are with problem statement from Traditional Quality Model
 
@@ -32,7 +32,7 @@ So, here we are with problem statement from Traditional Quality Model
 
 Presenting to you, the **Quality Assistance Approach**(as we call in BB) which emphasises on early testing and leaving minimal room for critical/ blocker issues by the end of the development cycle.
 
-![Quality Assistance Approach in development cycle](assets/images/post/shift-left3.png)
+![Quality Assistance Approach in development cycle](assets/shift-left3.png)
 
 Navigating phase by phase:
 - As the development cycle starts, QAs to write high-level test cases against each user story during the planning day or the 1st day of the development cycle
@@ -60,7 +60,7 @@ Besides being operational and compliance must-haves, NFRs are also essential con
 In traditional quality model, often the release roadmaps are designed in such a way that the NFRs are slotted for last few weeks of the delivery. The teams end up testing NFRs in a hurry to meet the release deadlines, leading to low confident, risky releases with a compromise in quality.
 Hence, NFR testing must also shift-left and prep must start right from Requirement phase of SDLC.
 
-![Shift Left Approach for NFRs](assets/images/post/shift-left4.png)
+![Shift Left Approach for NFRs](assets/shift-left4.png)
 
 _Requirement phase:_ Identify the NFRs and prioritise them
 
@@ -82,7 +82,7 @@ _Production & Maintenance phase:_ Release is deployed in production. All FRs and
 
 ## Key benefits of Shift Left Approach to Testing
 
-![Key benefits of Shift Left Approach](assets/images/post/shift-left5.png)
+![Key benefits of Shift Left Approach](assets/shift-left5.png)
 
 - Reduced costs involved in Development and Testing as bugs detected earlier are cheaper to fix. 
 - Reduced risk of NFR bugs impacting the delivery timeline. 
