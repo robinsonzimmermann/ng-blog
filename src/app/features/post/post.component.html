@@ -24,20 +24,23 @@
       </div>
     </header>
     <div class="post__content">
-      <div class="post__content-table">
-        @if (tableOfContent.length) {
-          <blog-table-of-content
-            class="sticky"
-            [headers]="tableOfContent"
-          ></blog-table-of-content>
-        }
-      </div>
-      <div class="post__content-text">
-        <markdown
-          [src]="markdownPath"
-          (load)="onLoad($event)"
-        ></markdown>
-      </div>
+      @if(markdown$ | async; as markdown) {
+        <div class="post__content-table">
+          @if (headers.length) {
+            <blog-table-of-content
+              class="sticky"
+              [headers]="headers"
+              [current]="currentSection"
+            ></blog-table-of-content>
+          }
+        </div>
+        <div class="post__content-text">
+          <markdown
+            [data]="markdown"
+            (load)="onLoad($event, post)"
+          ></markdown>
+        </div>
+      }
     </div>
   }
 

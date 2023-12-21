@@ -18,6 +18,7 @@ import { GradientComponent } from '../../components/gradient/gradient.component'
 import { PostsListComponent } from '../../components/posts-list/posts-list.component';
 import { NavigationService } from '../../core/services/navigation.service';
 import { CategoriesTabComponent } from '../../core/layout/categories-tab/categories-tab.component';
+import { TransitionComponent } from '../../components/transition/transition.component';
 
 @Component({
   selector: 'blog-home',
@@ -36,6 +37,7 @@ import { CategoriesTabComponent } from '../../core/layout/categories-tab/categor
     PostAuthorsPipe,
     GradientComponent,
     PostsListComponent,
+    TransitionComponent,
   ],
   providers: [NavigationService],
   templateUrl: './home.component.html',

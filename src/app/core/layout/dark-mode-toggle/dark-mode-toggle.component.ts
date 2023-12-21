@@ -34,11 +34,11 @@ export class DarkModeToggleComponent implements OnInit {
   }
 
   private toggleBodyClass() {
-    this.document.body.classList.remove('dark-theme', 'light-theme')
+    this.document.documentElement.classList.remove('dark-theme', 'light-theme')
     if (this.dark) {
-      this.document.body.classList.add('dark-theme');
+      this.document.documentElement.classList.add('dark-theme');
     } else {
-      this.document.body.classList.add('light-theme');
+      this.document.documentElement.classList.add('light-theme');
     }
   }
 }

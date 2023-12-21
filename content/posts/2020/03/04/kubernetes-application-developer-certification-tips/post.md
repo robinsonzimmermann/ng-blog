@@ -10,28 +10,13 @@ First, you need a base, if you have no work experience with production Kubernete
 
 Here some nice intros:
 
-{% include
-  components/video.html
-  url="https://www.youtube.com/embed/4ht22ReBjno"
-  title="The illustrated Children’s Guide to Kubernetes"
-%}
+![The illustrated Children’s Guide to Kubernetes](https://www.youtube.com/embed/4ht22ReBjno)
 
-{% include
-  components/video.html
-  url="https://www.youtube.com/embed/aSrqRSk43lY"
-  title="Kubernetes explained"
-%}
+![Kubernetes explained](https://www.youtube.com/embed/aSrqRSk43lY)
 
 For something more academic I would recommend following the course:
 
-{% include
-  components/link-card.html
-  heading="Introduction to Kubernetes"
-  body="Want to learn Kubernetes? Get an in-depth primer on this powerful system for managing containerized applications."
-  link="https://www.edx.org/course/introduction-to-kubernetes"
-  linkLabel="www.edx.org"
-  image="assets/0_XDOX4FxMG8-4iWZl.png"
-%}
+[![**Introduction to Kubernetes** Want to learn Kubernetes? Get an in-depth primer on this powerful system for managing containerized applications.](assets/0_XDOX4FxMG8-4iWZl.png)](https://www.edx.org/course/introduction-to-kubernetes)
 
 ### Study the curriculum
 
@@ -203,11 +188,7 @@ You have access to a simple notepad in the browser which can be used for storing
 
 You’ll receive access to 4 different clusters which multiple namespaces and various resources in each.
 
-{% include
-   components/figure.html
-   url="assets/1__70CzlisT3rrbOprVs4wXQ.png"
-   description="CKAD Clusters"
-%}
+![CKAD Clusters](assets/1__70CzlisT3rrbOprVs4wXQ.png)
 
 Each task on this exam must be completed on a designated cluster/configuration context. To minimize switching, the questions are grouped so that all questions on a given cluster appear consecutively. At the start of each task, you’ll be provided with the command to ensure you are on the correct cluster to complete the question. But you should be comfortable working in different namespaces with `kubectl`.
 
@@ -341,11 +322,7 @@ you don’t have to get 100% to pass the exam, try to attempt as much as you can
 
 ## Avoid YAML, do dry-run
 
-{% include
-   components/figure.html
-   url="assets/1_MT6vRvUwZxbIsCsgOeMidQ.png"
-   description="High tech tooling to debug YAML issues"
-%}
+![High tech tooling to debug YAML issues](assets/1_MT6vRvUwZxbIsCsgOeMidQ.png)
 
 It’s a waste of time, it’s annoying and nobody on this planet like to type YAML files and find it enjoying.
 

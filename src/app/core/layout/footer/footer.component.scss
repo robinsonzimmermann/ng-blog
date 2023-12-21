@@ -1,18 +1,8 @@
 :host {
   display: block;
   background: var(--blog-palette-neutral);
-  padding: 6rem 0 2rem;
+  padding: 3rem 0 2rem;
   position: relative;
-
-  &:before {
-    content: "";
-    position: absolute;
-    background: var(--blog-palette-background);
-    width: 100%;
-    height: 3rem;
-    top: 0;
-    border-radius: 0 0 5rem 0;
-  }
 }
 
 footer {

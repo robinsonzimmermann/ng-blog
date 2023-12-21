@@ -5,16 +5,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { HeaderNode, HeaderTreeNode } from '../../core/model/content.model';
 import { RouterLink } from '@angular/router';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'blog-table-of-content',
   standalone: true,
-  imports: [MatTreeModule, MatButtonModule, MatIconModule, RouterLink],
+  imports: [MatTreeModule, MatButtonModule, MatIconModule, RouterLink, NgClass],
   templateUrl: './table-of-content.component.html',
   styleUrl: './table-of-content.component.scss'
 })
 export class TableOfContentComponent implements OnInit {
   @Input() headers!: HeaderNode[];
+  @Input() current!: string;
 
   private _transformer = (node: HeaderNode, level: number) => {
     return {

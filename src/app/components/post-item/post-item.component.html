@@ -19,7 +19,7 @@
     </p>
     <div class="item-card__authors">
       @for (author of post.authors; track $index) {
-        <blog-author [author]="author"></blog-author>
+        <blog-author [author]="author" [muted]="true"></blog-author>
       }
     </div>
   </mat-card-content>

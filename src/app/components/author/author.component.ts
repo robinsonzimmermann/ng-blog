@@ -22,6 +22,7 @@ export class AuthorComponent {
     }
   };
   @Input() size: string = 'sm';
+  @Input() muted = false;
 
   author!: Author;
 }
