@@ -1,5 +1,5 @@
 import { FlatTreeControl } from '@angular/cdk/tree';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener, MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,8 +14,11 @@ import { NgClass } from '@angular/common';
   templateUrl: './table-of-content.component.html',
   styleUrl: './table-of-content.component.scss'
 })
-export class TableOfContentComponent implements OnInit {
-  @Input() headers!: HeaderNode[];
+export class TableOfContentComponent {
+  @Input() set headers(headers: HeaderNode[]) {
+    this.dataSource.data = headers;
+    this.treeControl.expandAll();
+  };
   @Input() current!: string;
 
   private _transformer = (node: HeaderNode, level: number) => {
@@ -40,13 +43,6 @@ export class TableOfContentComponent implements OnInit {
   );
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
-
-  constructor() {}
-
-  ngOnInit(): void {
-    this.dataSource.data = this.headers;
-    this.treeControl.expandAll();
-  }
 
   hasChild = (_: number, node: HeaderTreeNode) => node.expandable;
 }

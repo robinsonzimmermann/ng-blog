@@ -40,9 +40,10 @@
 <ng-template #menu>
   <mat-list>
     <mat-list-item><blog-button><a mat-button routerLink="/" blogIsActive>Blog</a></blog-button></mat-list-item>
-    <mat-list-item><blog-button>blog-button><a mat-button routerLink="/principles" blogIsActive>Priciples</a></blog-button></mat-list-item>
-    <mat-list-item><blog-search></blog-search></mat-list-item>
+    <mat-list-item><blog-button><a mat-button routerLink="/principles" blogIsActive>Priciples</a></blog-button></mat-list-item>
+    <mat-list-item><blog-button><a mat-button href="https://www.backbase.com/careers" target="_blank">Jobs <mat-icon iconPositionEnd fontIcon="open_in_new"></mat-icon></a></blog-button></mat-list-item>
+    <mat-list-item class="search"><blog-search></blog-search></mat-list-item>
     <mat-list-item class="push-right"><blog-dark-mode-toggle></blog-dark-mode-toggle></mat-list-item>
-    <mat-list-item><blog-button><a mat-stroked-button href="https://backbase.io" target="blank"><span>Backbase.io</span> <mat-icon iconPositionEnd>open_in_new</mat-icon></a></blog-button></mat-list-item>
+    <mat-list-item><blog-button><a mat-stroked-button href="https://backbase.io" target="blank"><span>Backbase.io</span> <mat-icon iconPositionEnd fontIcon="open_in_new"></mat-icon></a></blog-button></mat-list-item>
   </mat-list>
 </ng-template>

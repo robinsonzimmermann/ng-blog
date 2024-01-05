@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -25,7 +25,6 @@ import { getPermalink } from '@blog/utils';
   ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',
-  encapsulation: ViewEncapsulation.None,
 })
 export class SearchComponent implements OnInit {
   control = new FormControl<string>('');

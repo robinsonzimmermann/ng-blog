@@ -12,7 +12,8 @@
     "posts:publish": "node --experimental-specifier-resolution=node tools/publish",
     "posts:update": "node tools/concat",
     "posts:new": "ng generate ./tools/post-scaffolder:post-scaffolder",
-    "preposts:new": "cd tools/post-scaffolder && npm i && npm run build"
+    "preposts:new": "cd tools/post-scaffolder && npm i && npm run build",
+    "images:authors": "node tools/process-images content/assets/authors content/assets/authors/_sm 30 30 && node tools/process-images content/assets/authors content/assets/authors/_md 80 80 && node tools/process-images content/assets/authors content/assets/authors/_lg 120 120"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +44,7 @@
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
     "jasmine-core": "~5.1.0",
+    "jimp": "^0.22.10",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",

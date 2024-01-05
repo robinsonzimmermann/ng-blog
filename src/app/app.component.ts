@@ -20,4 +20,5 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 })
 export class AppComponent {
   title = 'blog';
+  constructor() {}
 }

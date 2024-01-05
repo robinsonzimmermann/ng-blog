@@ -6,7 +6,7 @@ import { getPermalink } from '@blog/utils';
 import { AuthorsService } from './authors.service';
 import { Category } from '../model/categories.model';
 
-const POSTS_PER_PAGE = 9;
+const POSTS_PER_PAGE = 8;
 
 @Injectable({
   providedIn: 'root'

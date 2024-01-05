@@ -1,5 +1,4 @@
-$test: var(--blog-breakpoint-md);
-@debug $test;
+@import "prismjs/themes/prism-okaidia.css";
 
 .post {
   &__header {

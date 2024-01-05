@@ -1,9 +1,9 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleChange, MatSlideToggleModule } from '@angular/material/slide-toggle';
-
-const STORAGE_KEY = 'darkMode';
+import { ThemeModeService } from '../../services/theme-mode.service';
+import { AsyncPipe } from '@angular/common';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'blog-dark-mode-toggle',
@@ -11,34 +11,17 @@ const STORAGE_KEY = 'darkMode';
   imports: [
     MatSlideToggleModule,
     MatIconModule,
+    AsyncPipe
   ],
   templateUrl: './dark-mode-toggle.component.html',
   styleUrl: './dark-mode-toggle.component.scss'
 })
-export class DarkModeToggleComponent implements OnInit {
-  dark = false;
+export class DarkModeToggleComponent {
+  dark$ = this.themeModeService.dark$.pipe(map((enabled) => ({ enabled })));
 
-  constructor(@Inject(DOCUMENT) private document: Document) {}
-
-  ngOnInit(): void {
-    if (this.document.defaultView?.window.localStorage.getItem(STORAGE_KEY) === 'true') {
-      this.dark = true;
-    }
-    this.toggleBodyClass();
-  }
+  constructor(private themeModeService: ThemeModeService) {}
 
   onChange(event: MatSlideToggleChange) {
-    this.dark = event.checked;
-    this.document.defaultView?.window.localStorage.setItem(STORAGE_KEY, `${event.checked}`);
-    this.toggleBodyClass();
-  }
-
-  private toggleBodyClass() {
-    this.document.documentElement.classList.remove('dark-theme', 'light-theme')
-    if (this.dark) {
-      this.document.documentElement.classList.add('dark-theme');
-    } else {
-      this.document.documentElement.classList.add('light-theme');
-    }
+    this.themeModeService.setDarkMode(event.checked);
   }
 }

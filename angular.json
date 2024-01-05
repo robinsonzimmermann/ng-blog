@@ -45,8 +45,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/prismjs/themes/prism-okaidia.css"
+              "src/styles.scss"
             ],
             "prerender": {
               "routesFile": "routes.txt"

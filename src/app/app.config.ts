@@ -8,6 +8,7 @@ import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import markdownConfig from './markdown.config';
 import { DOCUMENT } from '@angular/common';
+import { AUTHORS_AVATAR_PATH } from './core/config/paths.config';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -26,6 +27,10 @@ export const appConfig: ApplicationConfig = {
       provide: APP_INITIALIZER,
       useFactory: markdownConfig,
       deps: [MarkdownService, DOCUMENT],
-    }
+    },
+    {
+      provide: AUTHORS_AVATAR_PATH,
+      useValue: 'assets/authors'
+    },
   ],
 };

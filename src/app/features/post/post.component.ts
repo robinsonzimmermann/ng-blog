@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, ViewEncapsulation } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { Observable, filter, map, switchMap, tap, withLatestFrom } from 'rxjs';
 import { Post } from '../../core/model/post.model';
@@ -28,7 +28,9 @@ import { HeaderNode } from '../../core/model/content.model';
     TableOfContentComponent,
   ],
   templateUrl: './post.component.html',
-  styleUrl: './post.component.scss'
+  styleUrl: './post.component.scss',
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PostComponent {
   post$: Observable<Post | undefined> = this.activatedRoute.url.pipe(
@@ -39,8 +41,7 @@ export class PostComponent {
     map((segments) => `${segments.map(({ path }) => path).join('/')}/post.md`),
     switchMap((link) => this.markdownService.getSource(link)),
     withLatestFrom(this.post$),
-    tap(([markdown, post]) => this.createTree(markdown, post?.title || 'Top')),
-    map(([markdown]) => markdown)
+    map(([markdown]) => markdown),
   );
   relatedPosts$: Observable<Post[]> = this.post$.pipe(
     filter(Boolean),
@@ -50,8 +51,16 @@ export class PostComponent {
     map(({ posts }) => posts),
   );
   Category = Object.fromEntries(Object.entries(Category));
-  headers: HeaderNode[] = [];
   currentSection: string = 'post-header';
+
+  headers$: Observable<HeaderNode[]> = this.markdown$.pipe(
+    withLatestFrom(this.post$),
+    map(([markdown, post]) => this.createTree(markdown, post?.title)),
+    tap((tree) => {
+      console.log(tree);
+      this.cd.markForCheck();
+    })
+  );
 
   constructor(
     private postsService: PostsService,
@@ -68,15 +77,9 @@ export class PostComponent {
     this.router.navigate([path]);
   }
 
-  onLoad(markdown: string, post: Post) {
-    this.createTree(this.markdownService.parse(markdown).toString(), post.title);
-    this.cd.detectChanges();
-  }
-
-  private createTree(markdown: string, rootTitle: string) {
+  private createTree(markdown: string, rootTitle: string = '') {
     const regExp = new RegExp(/<h\d(.*?)<\/h\d>/gm);
     const matches = this.markdownService.parse(markdown).toString().match(regExp);
-    const root: HeaderNode = { id: 'post-header', heading: rootTitle, level: 1, children: [] };
 
     const nodes: Element[] = matches?.map((raw) => {
       const node = this.document.createElement('div');
@@ -90,16 +93,15 @@ export class PostComponent {
       level: Number(node.tagName.replace(/\D/g, '')),
       children: [],
     }));
-      
-    this.headers = headings.reduce(((hierarchy, heading) => {      
-      while (hierarchy.length >= heading.level) {
+
+    return headings.reduce((hierarchy: HeaderNode[], node: HeaderNode) => {
+      while(hierarchy[hierarchy.length - 1].level >= node.level) {
         hierarchy.pop();
       }
-    
-      hierarchy[hierarchy.length - 1].children.push(heading);
-      hierarchy.push(heading);
+      hierarchy[hierarchy.length - 1].children.push(node);
+      hierarchy.push(node);
 
       return hierarchy;
-    }), [root]);
+    }, [{ id: 'post-header', heading: rootTitle, level: 1, children: [] }]).splice(0, 1);
   }
 }

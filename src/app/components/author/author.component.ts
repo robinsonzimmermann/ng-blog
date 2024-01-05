@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { Author } from '../../core/model/author.model';
 import { NgClass, NgStyle } from '@angular/common';
+import { AUTHORS_AVATAR_PATH } from '../../core/config/paths.config';
 
 @Component({
   selector: 'blog-author',
@@ -25,4 +26,11 @@ export class AuthorComponent {
   @Input() muted = false;
 
   author!: Author;
+
+  get imagePath() {
+    return `${this.basePath}/_${this.size}/${this.author.avatar}`;
+  }
+
+  constructor(@Inject(AUTHORS_AVATAR_PATH) protected basePath: string) {}
+
 }
