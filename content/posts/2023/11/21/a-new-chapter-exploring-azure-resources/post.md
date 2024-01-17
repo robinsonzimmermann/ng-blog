@@ -1,3 +1,17 @@
+# A New Chapter: Exploring Azure Resources
+
+Azure’s limitless potential sets the stage for a promising journey, where opportunities abound on the horizon.
+
+![](assets/azure-banner.png)
+
+Authors: Sri Balaji,Ashish Arora
+Date: 2023-11-21
+Category: devops
+
+tags: azure,devops,system engineering,cloud
+
+---
+
 ## **Demystifying Cloud Computing: A Quick Introduction**
 
 **Introduction to Cloud Computing**

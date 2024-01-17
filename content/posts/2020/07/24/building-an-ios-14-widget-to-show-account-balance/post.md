@@ -1,3 +1,17 @@
+# Building an iOS 14 Widget to Show Account Balance
+
+WWDC20 has introduced us to iOS 14, which along other features now include widgets on the home screen
+
+![](assets/ios-widget-banner.png)
+
+Authors: Arthur Alves
+Date: 2020-07-24
+Category: mobile
+
+tags: mobile,ios14,ios,swift,widget
+
+---
+
 > ***Disclaimer**: This is merely used as proof of concept rather than a production feature, as there are security points to be taken in consideration for showing private and sensitive data for banking apps and similar applications.*
 
 [WWDC20](https://developer.apple.com/wwdc20/) has introduced us to [iOS 14](https://www.apple.com/ios/ios-14-preview/), which along other features now include widgets on the home screen. Widgets aren’t new, but now they are totally different - including the way you build them, support up to 3 different sizes and **are on the home screen!** 😱

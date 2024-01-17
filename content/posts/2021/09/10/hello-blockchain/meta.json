@@ -1,9 +1,0 @@
-{
-  "title": "Hello, Blockchain",
-  "excerpt": "Create a \"Hello, world!\"-style React app that reads and displays data from the Joystream blockchain",
-  "teaser": "assets/blockchain_banner.png",
-  "authors": ["Alexey Buistov"],
-  "category": "frontend",
-  "tags": ["blockchain","react","joystream"],
-  "date": "2021-09-10"
-}

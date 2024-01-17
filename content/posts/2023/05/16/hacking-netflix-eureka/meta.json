@@ -1,9 +1,0 @@
-{
-  "title": "Hacking Netflix Eureka",
-  "excerpt": "Found exposed Eureka server and don't know what to do?",
-  "teaser": "assets/hacking-netflix-eureka/hacking-netflix-eureka.png",
-  "authors": ["Maxim Tyukov"],
-  "category": "devops",
-  "tags": ["eureka","security"],
-  "date": "2023-05-16"
-}

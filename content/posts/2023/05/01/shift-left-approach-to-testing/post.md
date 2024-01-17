@@ -1,3 +1,17 @@
+# Shift Left Approach to Testing
+
+How to ensure better code and higher product quality
+
+![](assets/shift-left-banner.png)
+
+Authors: Anjali Goyal
+Date: 2023-05-01
+Category: qa
+
+tags: testing,test,quality,qa,quality assurance
+
+---
+
 “**Shift left**” testing movement is about pushing testing towards the early stages of Software Development Life Cycle.
 
 By testing **early and often**, a project can reduce the number of bugs and increase the quality of the code.

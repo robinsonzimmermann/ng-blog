@@ -1,9 +1,0 @@
-{
-  "title": "Angular Unit Testing with Spectator",
-  "excerpt": "A robust testing library for unit testing",
-  "teaser": "assets/spectator-banner.png",
-  "authors": ["Utku"],
-  "category": "frontend",
-  "tags": ["web","angular","testing","test","unit testing","frontend"],
-  "date": "2023-10-25"
-}

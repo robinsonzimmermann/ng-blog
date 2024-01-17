@@ -1,3 +1,17 @@
+# InnerSource
+
+Understand what InnerSource is and how Backbase uses it to create an environment where
+
+![](assets/innersource.png)
+
+Authors: Craig Walker
+Date:
+Category: principles
+
+tags: innersource
+
+---
+
 ## What is InnerSource?
 
 InnerSource is the use of open source best practices and establishment of an open source culture — within an organisation like Backbase.

@@ -1,9 +1,0 @@
-{
-  "title": "Deploying an Angular app on Azure",
-  "excerpt": "Deploy a multi-locale Angular app using Azure Blob Storage and CDN Classic",
-  "teaser": "assets/angular-azure-banner.png",
-  "authors": ["Yash Kapila","Marco Santarelli"],
-  "category": "frontend",
-  "tags": ["frontend","angular","azure","i18n"],
-  "date": "2022-06-08"
-}

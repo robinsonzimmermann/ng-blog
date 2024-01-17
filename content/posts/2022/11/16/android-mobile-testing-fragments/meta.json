@@ -1,9 +1,0 @@
-{
-  "title": "Android Mobile Testing: Fragments",
-  "excerpt": "How to decrease the number of E2E tests and improve coverage with Fragments Testing",
-  "teaser": "assets/espresso-banner.png",
-  "authors": ["Raman Koushyk"],
-  "category": "qa",
-  "tags": ["mobile","android","testing","qa","test","quality assurance"],
-  "date": "2022-11-16"
-}

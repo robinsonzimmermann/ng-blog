@@ -1,3 +1,17 @@
+# Kubernetes Application Developer Certification Tips
+
+I just passed the CKAD exam: And I want to share my journey and some tips and recommendations on how to handle the exam itself.
+
+![](assets/kubernetes-banner.png)
+
+Authors: Andrés Torres
+Date: 2020-03-04
+Category: devops
+
+tags: ckad,kubernetes,certification,certified,k8s
+
+---
+
 I just passed the Certified Kubernetes Application Developer (CKAD) exam: [https://www.cncf.io/certification/ckad/](https://www.cncf.io/certification/ckad/)
 
 And I want to share my journey and some tips on how to handle the CKAD preparation and the exam itself.

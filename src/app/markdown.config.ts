@@ -1,9 +1,6 @@
 import { MarkdownService } from "ngx-markdown";
 
 export default function(markdownService: MarkdownService, document: Document) {
-  markdownService.options = {
-    
-  }
   markdownService.renderer.link = (href: string, title: string | null | undefined, text: string) => {
     const external = href.startsWith('http') && !href.includes(document.defaultView?.window?.location.hostname || '');
     return `
@@ -13,13 +10,14 @@ export default function(markdownService: MarkdownService, document: Document) {
     `;
   };
   markdownService.renderer.image = (href: string, title: string | null, text: string) => {
+    const mpaHref = href.startsWith('http') ? href : `${document.defaultView?.window?.location.pathname}/${href}`;
     const isVideo = [
       'youtube.com'
     ].some(embed => href.includes(embed));
     if (!isVideo) {
       return `
         <figure>
-          <img src="${href}" alt="${title || text}" />
+          <img src="${mpaHref}" alt="${title || text}" />
           <figcaption>${text}</figcaption>
         </figure>
       `;

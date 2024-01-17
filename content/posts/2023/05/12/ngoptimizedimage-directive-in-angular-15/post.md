@@ -1,3 +1,17 @@
+# NgOptimizedImage Directive in Angular 15
+
+Image optimisation techniques and performance improvements with the new NgOptimizedImage directive in Angular 15
+
+![](assets/ng-optimized-image-directive-in-angular-banner.png)
+
+Authors: Manisha Arya
+Date: 2023-05-12
+Category: frontend
+
+tags: web,NgOptimizedImage,angular,frontend
+
+---
+
 ## Introduction
 
 Images constitute a major part of any web application. They heavily impact the page loading times and performance of the web page.

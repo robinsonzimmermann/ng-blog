@@ -1,3 +1,17 @@
+# Ease your life at work with Fastlane
+
+A brief overview of how we use fastlane in CI pipelines for iOS
+
+![](assets/fastlane_banner.png)
+
+Authors: Dilshan Fernando
+Date: 2022-07-01
+Category: qa
+
+tags: "mobile","ios","testing"
+
+---
+
 ## As a software Tester, are you curious in finding the solutions to the below questions? (for iOS)
  - How to reduce test execution time by running in parallel on physical devices and simulators? 
  - How to generate test reports with screenshots and run tests via a command-line interface?

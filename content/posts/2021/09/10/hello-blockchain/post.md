@@ -1,3 +1,17 @@
+# Hello, Blockchain
+
+Create a \"Hello, world!\"-style React app that reads and displays data from the Joystream blockchain
+
+![](assets/blockchain_banner.png)
+
+Authors: Alexey Buistov
+Date: 2021-09-10
+Category: frontend
+
+tags: blockchain,react,joystream
+
+---
+
 This tutorial walks you through the process of creating a very minimal "Hello, world!" - style React app that reads and displays data from the Joystream blockchain. Along the way, I comment a thing or two about scaffolding React applications, JSON-RPC APIs and about the blockhain itself. 
 
 

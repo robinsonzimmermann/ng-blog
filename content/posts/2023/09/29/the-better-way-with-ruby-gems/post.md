@@ -1,3 +1,17 @@
+# The Better Way with Ruby Gems
+
+Using Ruby Gems to ensure that everyone in the project shares the same setup.
+
+![](assets/the_better_way_ruby_gems.png)
+
+Authors: Arthur Alves
+Date: 2023-09-29
+Category: mobile
+
+tags: mobile,android,ios,ruby
+
+---
+
 ## Introduction
 
 Working with an iOS project involves the usage of tools such as Cocoapods, Slather, SwiftLint, Fastlane and more. Ideally, all engineers working on a particular codebase - as well as the CI machine it runs on - should maintain the same versions of these tools.

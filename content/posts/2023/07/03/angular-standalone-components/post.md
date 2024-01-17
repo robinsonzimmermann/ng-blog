@@ -1,3 +1,17 @@
+# Angular standalone components
+
+A simplified way to build Angular applications
+
+![](assets/angular-standalone-components.png)
+
+Authors: Ankit Pant
+Date: 2023-07-03
+Category: frontend
+
+tags: web,angular,standalone,frontend
+
+---
+
 ## Introduction
 
 Until now, developers have been using NgModules to specify the components, directives, pipes, etc that are available for use in templates, however, after the release of Angular [standalone components](https://angular.io/guide/standalone-components "https://angular.io/guide/standalone-components"), you don't need to do this anymore in the NgModules.

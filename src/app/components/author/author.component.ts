@@ -1,7 +1,7 @@
 import { Component, Inject, Input } from '@angular/core';
 import { Author } from '../../core/model/author.model';
 import { NgClass, NgStyle } from '@angular/common';
-import { AUTHORS_AVATAR_PATH } from '../../core/config/paths.config';
+import { AUTHORS_AVATAR_PATH_TOKEN } from '../../core/config/configuration-tokens';
 
 @Component({
   selector: 'blog-author',
@@ -31,6 +31,6 @@ export class AuthorComponent {
     return `${this.basePath}/_${this.size}/${this.author.avatar}`;
   }
 
-  constructor(@Inject(AUTHORS_AVATAR_PATH) protected basePath: string) {}
+  constructor(@Inject(AUTHORS_AVATAR_PATH_TOKEN) protected basePath: string) {}
 
 }

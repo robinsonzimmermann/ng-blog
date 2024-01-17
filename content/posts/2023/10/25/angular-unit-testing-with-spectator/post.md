@@ -1,3 +1,17 @@
+# Angular Unit Testing with Spectator
+
+A robust testing library for unit testing
+
+![](assets/spectator-banner.png)
+
+Authors: Utku
+Date: 2023-10-25
+Category: frontend
+
+tags: web,angular,testing,test,unit testing,frontend
+
+---
+
 ## Introduction
 
 Spectator is a powerful testing tool designed to simplify Angular testing. It is built on top of the TestBed API and effectively reduces the boilerplate code associated with the built-in TestBed API. By doing so, Spectator delivers a more efficient and developer-friendly testing experience. In this article, we discuss Spectator test cases, installation, testing components and services, advantages, drawbacks, and migrating to Spectator.

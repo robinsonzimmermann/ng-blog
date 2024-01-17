@@ -1,3 +1,17 @@
+# Code Coverage for Unit Tests
+
+Code coverage helps in the easy maintenance of the codebase, exposure of bad code, and results in faster time to market
+
+![](assets/code_coverage.png)
+
+Authors: Rafael Nascimento
+Date: 2023-10-06
+Category: qa
+
+tags: qa,mobile,android,iOS,tests,testing,web,unit testing
+
+---
+
 # Introduction
 
 Code coverage is the percentage of lines of your code that is being executed by your tests. This is an indicative of how safe your code is and how bug proof it can be while refactoring or adding new features. Code coverage helps in the easy maintenance of the codebase, exposure of bad code, and results in faster time to market. 

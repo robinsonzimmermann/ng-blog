@@ -12,17 +12,21 @@ function scanDirectory(directoryPath, filesArray, routesArray) {
         if (stat.isDirectory()) {
             // Recursively scan subdirectories
             scanDirectory(filePath, filesArray, routesArray);
-        } else if (file === 'meta.json') {
+        } else if (file === 'post.md') {
             // If the file is named "meta.json", read its content and add it to the array
             const fileContent = fs.readFileSync(filePath, 'utf8');
-            const jsonObject = JSON.parse(fileContent);
-
-            const markdownContent = fs.readFileSync(`${directoryPath}/post.md`, 'utf8');
-
-            jsonObject.readingTime = readingTime(markdownContent, 238).text;
-
-
-            filesArray.push(jsonObject);
+            
+            const metaData = fileContent.split('---')[0];
+            filesArray.push({
+                title: metaData.match(/^#\s(.+)/m)[1],
+                excerpt: metaData.match(/^#[^\n]+\n+([^\n]+)/s)[1],
+                teaser: metaData.match(/^\!\[[^\(]+\(([^\)]+)/im)[1],
+                authors: metaData.match(/^Authors:\s(.+)/im)[1].split(',').map(n => n.trim()),
+                category: metaData.match(/^Category:\s(.+)/im)[1],
+                tags: metaData.match(/^Tags:\s(.+)/im)[1].split(',').map(n => n.trim()),
+                date: metaData.match(/^Date:\s(.+)/im)?.[1],
+                readingTime: readingTime(fileContent, 238).text
+            });
             routesArray.push(directoryPath.replace('content/posts', ''));
         }
     });
@@ -33,7 +37,7 @@ function scanDirectory(directoryPath, filesArray, routesArray) {
 
 function main() {
     const startDirectory = 'content/posts'; // Change this to the starting directory path
-    const outputFilePath = 'content/posts/meta.json'; // Change this to the desired output file path
+    const outputFilePath = 'content/posts/posts.json'; // Change this to the desired output file path
 
     if (fs.existsSync(outputFilePath)) {
       fs.unlinkSync(outputFilePath);

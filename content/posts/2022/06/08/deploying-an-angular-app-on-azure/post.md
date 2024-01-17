@@ -1,3 +1,17 @@
+# Deploying an Angular app on Azure
+
+Deploy a multi-locale Angular app using Azure Blob Storage and CDN Classic
+
+![](assets/angular-azure-banner.png)
+
+Authors: Yash Kapila, Marco Santarelli
+Date: 2022-06-08
+Category: frontend
+
+tags: frontend,angular,azure,i18n
+
+---
+
 ## Introduction
 
 Backbase has been working towards a web architecture that follows [Jamstack](https://jamstack.org) principles and aligns with Angular best practices. Our goal is to ensure our web app's rendering strategy is decoupled from the backend and hosted on the best infrastructure possible.

@@ -1,6 +1,6 @@
 <div class="featured center-container">
   <div class="featured__image">
-    <img mat-card-image [src]="post.teaser" alt="">
+    <img mat-card-image [src]="post | postUrl : post.teaser" alt="">
   </div>
   
   <div class="featured__content">

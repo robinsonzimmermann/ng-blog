@@ -1,3 +1,17 @@
+# The ultimate guide to Slack etiquette
+
+Etiquette refers to a customary polite behaviour. When used properly, I believe it can improve one's performance. Are you being polite towards your colleagues?
+
+![](assets/slack-etiquette-banner.png)
+
+Authors: Rafael Nascimento
+Date: 2021-12-01
+Category: tech-life
+
+tags: slack,remote work,etiquette
+
+---
+
 We all know that COVID changed the world we live in today. It also changed the way most people work. Although remote work is nothing new for a lot of people, many of us had to adapt to it. Before, we could simply have a coffee with our team mates and discuss things face to face, but now messaging tools (for example [Slack](https://youtu.be/qUkYkm9bWak)) take a very important role in a "the less useless meetings the better" remote work strategy.
 
 Slack is a messaging app for business that connects people to the information they need. It has several features that makes remote cooperation *"an easier, more organized way to work"* (as they promote on their website). Slack team is so kind that they even give you some [etiquette tips](https://slack.com/blog/collaboration/etiquette-tips-in-slack) of how to collaborate with kindness (I recommend the read, as I don't plan to repeat all of them here). However, I want to take this a step further.

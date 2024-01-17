@@ -1,6 +1,18 @@
-## Chronicles of Code: A Two-Minute Sonnet in Silicon
+# <%= title %>
 
-![Silicon Symphony](assets/undraw_To_the_stars_re_wq2x.png)
+![](assets/placeholder.png)
+
+Authors: <%= authors %>
+Date: <%= date %>
+Category: <%= category %>
+
+<%= excerpt %>
+
+tags: <%= tags %>
+
+---
+
+## Chronicles of Code: A Two-Minute Sonnet in Silicon
 
 In the ethereal realm where silicon sprites pirouette in a dance of ones and zeros, we invite you to embark on a fleeting journey—a *two-minute sonnet* in silicon, where the quill of technology composes verses in the language of algorithms, guided by the timeless wisdom of **Shakespeare**.
 

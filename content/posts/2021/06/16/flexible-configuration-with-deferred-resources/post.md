@@ -1,3 +1,17 @@
+# Flexible configuration with Deferred Resources
+
+Deferred Resources provides flexibility beyond the standard resource-resolution approaches
+
+![](assets/deferred-resources-banner.png)
+
+Authors: Drew Hamilton
+Date: 2021-06-16
+Category: mobile
+
+tags: mobile,android,open source,deferred resources
+
+---
+
 Our feature libraries, which include UI, have a number of varying requirements regarding
 configuration by our customers. (My colleague Hari wrote about one such library's requirements
 [here]({% post_url 2020-08-14-android-configuration-driven-ui-from-epoxy-to-compose %}).)

@@ -1,9 +1,0 @@
-{
-  "title": "Ease your life at work with Fastlane",
-  "excerpt": "A brief overview of how we use fastlane in CI pipelines for iOS",
-  "teaser": "assets/fastlane_banner.png",
-  "authors": ["Dilshan Fernando"],
-  "category": "qa",
-  "tags": ["mobile","ios","testing"],
-  "date": "2022-07-01"
-}

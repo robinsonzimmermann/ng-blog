@@ -1,3 +1,17 @@
+# Software Engineering
+
+Our engineering principles
+
+![](assets/software-engineering.png)
+
+Authors: Craig Walker, Marco Santarelli
+Date: 
+Category: principles
+
+tags: software engineering
+
+---
+
 ## A short introduction
 ### What are these principles and why we need them?
 

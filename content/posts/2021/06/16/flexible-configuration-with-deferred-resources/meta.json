@@ -1,9 +1,0 @@
-{
-  "title": "Flexible configuration with Deferred Resources",
-  "excerpt": "Deferred Resources provides flexibility beyond the standard resource-resolution approaches",
-  "teaser": "assets/deferred-resources-banner.png",
-  "authors": ["Drew Hamilton"],
-  "category": "mobile",
-  "tags": ["mobile","android","open source","deferred resources"],
-  "date": "2021-06-16"
-}

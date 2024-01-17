@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Observable, map, shareReplay, tap, withLatestFrom } from 'rxjs';
 import { Post, Posts } from '../model/post.model';
 import { HttpClient } from '@angular/common/http';
 import { getPermalink } from '@blog/utils';
 import { AuthorsService } from './authors.service';
 import { Category } from '../model/categories.model';
+import { STANDALONE_CATEGORIES_TOKEN } from '../config/configuration-tokens';
 
 const POSTS_PER_PAGE = 8;
 
@@ -12,11 +13,12 @@ const POSTS_PER_PAGE = 8;
   providedIn: 'root'
 })
 export class PostsService {
-  private cached: Observable<Post[]> = this.httpClient.get<Post[]>('meta.json').pipe(shareReplay());
+  private cached: Observable<Post[]> = this.httpClient.get<Post[]>('posts.json').pipe(shareReplay());
 
   constructor(
     private httpClient: HttpClient,
-    private authorsService: AuthorsService
+    private authorsService: AuthorsService,
+    @Inject(STANDALONE_CATEGORIES_TOKEN) private standaloneCategories: string[],
   ) {}
 
   getAllPosts(): Observable<Post[]> {
@@ -25,7 +27,7 @@ export class PostsService {
 
   getHighlightedPost(): Observable<Post | undefined> {
     return this.getAllPosts().pipe(
-      map((posts) => posts.find(({ featured }) => featured) || posts.find(({ article }) => !article))
+      map((posts) => posts.find(({ featured }) => featured) || posts.find(({ category }) => !this.standaloneCategories.includes(category)))
     );
   }
 
@@ -64,7 +66,7 @@ export class PostsService {
   }
 
   getPost(permalink: string | null): Observable<Post | undefined> {
-    const filterByPermalink = (post: Post) => getPermalink(post.title, post.date ? new Date(post.date) : undefined, post.category, post.article) === permalink;
+    const filterByPermalink = (post: Post) => getPermalink(post.title, post.date ? new Date(post.date) : undefined, post.category, this.standaloneCategories.includes(post.category)) === permalink;
     return this.getPosts(0, 1, false, (post: Post) => filterByPermalink(post)).pipe(map(({ posts }) => posts[0]));
   }
 

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, ViewEncapsulation } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
-import { Observable, filter, map, switchMap, tap, withLatestFrom } from 'rxjs';
+import { Observable, filter, map, switchMap, withLatestFrom } from 'rxjs';
 import { Post } from '../../core/model/post.model';
 import { PostsService } from '../../core/services/posts.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
@@ -37,12 +37,13 @@ export class PostComponent {
     map((segments) => segments.map(({ path }) => path).join('/')),
     switchMap((permalink) => this.postsService.getPost(permalink)),
   );
+
   markdown$: Observable<string> = this.activatedRoute.url.pipe(
     map((segments) => `${segments.map(({ path }) => path).join('/')}/post.md`),
     switchMap((link) => this.markdownService.getSource(link)),
-    withLatestFrom(this.post$),
-    map(([markdown]) => markdown),
+    map(this.removeMarkdownMetadataHeader),
   );
+
   relatedPosts$: Observable<Post[]> = this.post$.pipe(
     filter(Boolean),
     switchMap(post =>
@@ -50,16 +51,12 @@ export class PostComponent {
         post.title !== _post.title && (post.category === _post.category || post.tags.some((tag) => _post.tags.includes(tag))))),
     map(({ posts }) => posts),
   );
+
   Category = Object.fromEntries(Object.entries(Category));
-  currentSection: string = 'post-header';
 
   headers$: Observable<HeaderNode[]> = this.markdown$.pipe(
     withLatestFrom(this.post$),
     map(([markdown, post]) => this.createTree(markdown, post?.title)),
-    tap((tree) => {
-      console.log(tree);
-      this.cd.markForCheck();
-    })
   );
 
   constructor(
@@ -103,5 +100,13 @@ export class PostComponent {
 
       return hierarchy;
     }, [{ id: 'post-header', heading: rootTitle, level: 1, children: [] }]).splice(0, 1);
+  }
+
+  private removeMarkdownMetadataHeader(markdown: string) {
+    try {
+      return markdown.split(/---(.+)/s)[1];
+    } catch(e) {
+      throw new Error('Markdown not with right format');
+    }
   }
 }

@@ -1,9 +1,0 @@
-{
-  "title": "Configuration Driven UI from Epoxy to Compose",
-  "excerpt": "This is a story of how we came up with the solution for Configuration driven UI (a level below server-driven UI) in Android at Backbase",
-  "teaser": "assets/epoxy-compose-banner.png",
-  "authors": ["Hari Vignesh"],
-  "category": "mobile",
-  "tags": ["mobile","android","jetpack","epoxy"],
-  "date": "2020-08-14"
-}

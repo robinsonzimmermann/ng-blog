@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run posts:update && ng serve",
+    "prestart": "npm run posts:update",
+    "start": "ng serve",
+    "prebuild": "npm run posts:update && npm run posts:update",
     "build": "ng build",
     "build:utils": "ng build utils",
     "build:all": "npm run build:utils && npm run build:posts && npm run build",

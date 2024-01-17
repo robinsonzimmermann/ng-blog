@@ -1,3 +1,17 @@
+# Android Mobile Testing: Fragments
+
+How to decrease the number of E2E tests and improve coverage with Fragments Testing
+
+![](assets/espresso-banner.png)
+
+Authors: Raman Koushyk
+Date: 2022-11-16
+Category: qa
+
+tags: mobile,android,testing,qa,test,quality assurance
+
+---
+
 ## **What is Fragment testing on Android**
 
 

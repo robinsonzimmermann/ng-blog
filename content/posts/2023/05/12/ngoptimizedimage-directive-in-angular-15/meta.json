@@ -1,9 +1,0 @@
-{
-  "title": "NgOptimizedImage Directive in Angular 15",
-  "excerpt": "Image optimisation techniques and performance improvements with the new NgOptimizedImage directive in Angular 15",
-  "teaser": "assets/ng-optimized-image-directive-in-angular-banner.png",
-  "authors": ["Manisha Arya"],
-  "category": "frontend",
-  "tags": ["web","NgOptimizedImage","angular","frontend"],
-  "date": "2023-05-12"
-}

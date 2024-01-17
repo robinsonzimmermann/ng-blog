@@ -1,6 +1,6 @@
 <mat-card matRipple data-role="button" class="item-card" (click)="navigate()">
   <mat-card-header class="item-card__header">
-    <img mat-card-image [src]="post.teaser" alt="">
+    <img mat-card-image [src]="post | postUrl : post.teaser" alt="">
   </mat-card-header>
   
   <mat-card-content>

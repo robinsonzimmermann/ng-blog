@@ -1,9 +1,0 @@
-{
-  "title": "Installing HMS Core in Android Studio Emulator",
-  "excerpt": "If you want to test your HMS implementation and you do not have a Huawei device, it is easy to mock it and test these services in the Android Studio emulator",
-  "teaser": "assets/hms-core/hms_core_banner.png",
-  "authors": ["Edgar Garcia Barragan"],
-  "category": "mobile",
-  "tags": ["mobile","android","huawei","hms"],
-  "date": "2023-09-30"
-}

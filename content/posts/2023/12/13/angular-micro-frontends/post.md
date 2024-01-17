@@ -1,5 +1,22 @@
+# Angular & Micro Frontends
+
+Micro Frontends is a modern architectural approach for developing web applications.
+
+![](assets/angular_microfrontends.png)
+
+Authors: Harsh Julka
+Date: 2023-12-13
+Category: frontend
+
+tags: web,angular,microfrontends,federation,frontend
+
+---
+
 ## Introduction
 Micro Frontends is a modern architectural approach for developing web applications. Instead of creating a large, monolithic web application, it involves building multiple smaller frontend applications. Each of these small application has a specific feature, which can be independently deployed and scaled. These micro frontends interact with each other to create a seamless user interface. This approach allows for greater flexibility and easier maintenance of web applications.
+
+
+---
 
 Micro Frontends Architecture is composed of two or more applications:
 - Shell/Host Application
