@@ -6,19 +6,19 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  padding: 16px;
+  padding: 1rem;
   align-items: center;
 
   &__menu-container--horizontal {
     flex-grow: 2;
-    margin-left: 5%;
+    margin-left: 2rem;
 
     .mat-mdc-list {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
     }
-  
+
     .mat-mdc-list-item {
       width: auto;
     }
@@ -26,26 +26,40 @@
 
   &__mobile-menu {
     position: fixed;
-    width: 100vw;
+    max-width: 100vw;
+    width: 480px;
     height: 100vh;
     top: 0;
-    left: 0;
-  
+
     .close-button-container {
       display: flex;
       justify-content: flex-end;
+    }
+
+    &--navigation {
+      display: flex;
+      min-height: 90vh;
+
+      .mat-mdc-list {
+        display: flex;
+        flex-direction: column;
+
+        .search +  {
+          margin-top: auto;
+        }
+      }
     }
   }
 
   &__logo-link {
     text-decoration: none;
     color: #000000;
-    font-size: .85em;
+    font-size: 0.85em;
   }
 
   .mdc-button {
     &:after {
-      content: "";
+      content: '';
       height: 5px;
       width: 0;
       background: var(--mat-badge-background-color);
@@ -56,7 +70,7 @@
     &:hover {
       position: relative;
       &:after {
-        transition: width .15s ease-out;
+        transition: width 0.15s ease-out;
         width: 100%;
       }
     }
@@ -69,9 +83,21 @@
 
 .push-right {
   margin-left: auto;
+  @media screen and (max-width: 768px) {
+    margin-top: auto;
+  }
 }
 
 .mdc-list-item.mdc-list-item--with-one-line.search {
   height: auto;
 }
 
+.mat-mdc-list {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  blog-button .mdc-button {
+    min-width: initial;
+  }
+}

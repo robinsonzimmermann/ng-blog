@@ -12,7 +12,6 @@ import { ButtonComponent } from '../../../components/button/button.component';
 import { SearchComponent } from '../../../features/search/search.component';
 import { DarkModeToggleComponent } from '../dark-mode-toggle/dark-mode-toggle.component';
 
-
 @Component({
   selector: 'blog-navigation',
   standalone: true,
@@ -31,13 +30,23 @@ import { DarkModeToggleComponent } from '../dark-mode-toggle/dark-mode-toggle.co
     DarkModeToggleComponent,
   ],
   templateUrl: './navigation.component.html',
-  styleUrl: './navigation.component.scss'
+  styleUrl: './navigation.component.scss',
 })
 export class NavigationComponent implements OnInit {
   menuOpen = false;
   isMobile = false;
 
   private window: Window | undefined = this.document.defaultView?.window;
+
+  protected readonly navigationItems = [
+    { link: '/', label: 'Blog' },
+    { link: '/principles', label: 'Principles' },
+    {
+      link: 'https://www.backbase.com/careers',
+      label: 'Careers',
+      external: true,
+    },
+  ];
 
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
@@ -55,13 +64,14 @@ export class NavigationComponent implements OnInit {
   }
 
   private defineView() {
-    if (!this.window) { return; }
-    const mobileBreakpoint =
-      this.window.getComputedStyle(this.document.documentElement)
-        .getPropertyValue('--blog-breakpoint-md').replace('px', '');
-    const viewSize = this.window.innerWidth;
-    if (Number(viewSize) < Number(mobileBreakpoint)) {
-      this.isMobile = true;
+    if (!this.window) {
+      return;
     }
+    const mobileBreakpoint = this.window
+      .getComputedStyle(this.document.documentElement)
+      .getPropertyValue('--blog-breakpoint-lg')
+      .replace('px', '');
+    const viewSize = this.window.innerWidth;
+    this.isMobile = Number(viewSize) < Number(mobileBreakpoint);
   }
 }

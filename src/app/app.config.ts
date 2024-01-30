@@ -1,4 +1,9 @@
-import { APP_INITIALIZER, ApplicationConfig, SecurityContext, importProvidersFrom } from '@angular/core';
+import {
+  APP_INITIALIZER,
+  ApplicationConfig,
+  SecurityContext,
+  importProvidersFrom,
+} from '@angular/core';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -8,21 +13,26 @@ import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import markdownConfig from './markdown.config';
 import { DOCUMENT } from '@angular/common';
-import { AUTHORS_AVATAR_PATH_TOKEN, STANDALONE_CATEGORIES_TOKEN } from './core/config/configuration-tokens';
+import { AUTHORS_AVATAR_PATH_TOKEN } from './core/config/configuration-tokens';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, withInMemoryScrolling({
-      scrollPositionRestoration: 'enabled',
-      anchorScrolling: 'enabled'
-    })),
+    provideRouter(
+      routes,
+      withInMemoryScrolling({
+        scrollPositionRestoration: 'enabled',
+        anchorScrolling: 'enabled',
+      })
+    ),
     provideClientHydration(),
     provideAnimations(),
     provideHttpClient(withFetch()),
-    importProvidersFrom(MarkdownModule.forRoot({
-      loader: HttpClient,
-      sanitize: SecurityContext.NONE,
-    })),
+    importProvidersFrom(
+      MarkdownModule.forRoot({
+        loader: HttpClient,
+        sanitize: SecurityContext.NONE,
+      })
+    ),
     {
       provide: APP_INITIALIZER,
       useFactory: markdownConfig,
@@ -30,11 +40,7 @@ export const appConfig: ApplicationConfig = {
     },
     {
       provide: AUTHORS_AVATAR_PATH_TOKEN,
-      useValue: 'assets/authors'
+      useValue: 'authors',
     },
-    {
-      provide: STANDALONE_CATEGORIES_TOKEN,
-      useValue: ['principles']
-    }
   ],
 };

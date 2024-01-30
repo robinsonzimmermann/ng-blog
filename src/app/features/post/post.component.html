@@ -1,15 +1,21 @@
-<div class="post">
+<blog-gradient [height]="300"></blog-gradient>
+<section class="post">
   @if (post$ | async; as post) {
     <header id="post-header" class="post__header">
+      <div class="post__header-filling"></div>
       <div class="post__header-content">
         <mat-chip-set aria-label="Category selection">
-          <mat-chip data-role="button" (click)="navigate('category/' + post.category)">{{ Category[post.category] }}</mat-chip>
+          <mat-chip>
+            <a [routerLink]="'/category/' + post.category">{{
+              Category[post.category]
+            }}</a>
+          </mat-chip>
         </mat-chip-set>
         <h1>{{ post.title }}</h1>
         <h2>{{ post.excerpt }}</h2>
         <span class="post__header-info">
           @if (post.date) {
-            {{ post.date | date : 'longDate' }} |
+            {{ post.date | date: 'longDate' }} |
           }
           {{ post.readingTime }}
         </span>
@@ -20,28 +26,29 @@
         </div>
       </div>
       <div class="post__header-image">
-        <img [src]="post.teaser" alt="">
+        <img [src]="post | postUrl: post.teaser" alt="" />
       </div>
     </header>
     <div class="post__content">
-      <div class="post__content-table">
+      <aside class="post__content-table">
         <blog-table-of-content
           class="sticky"
-          [headers]="(headers$ | async) || []"
-        ></blog-table-of-content>
-      </div>
-      <div class="post__content-text">
-        <markdown
-          [data]="markdown$ | async"
-        ></markdown>
-      </div>
+          [headers]="(headers$ | async) || []"></blog-table-of-content>
+      </aside>
+      <article class="post__content-text center-container">
+        <markdown class="markdown-container" [data]="markdown$ | async"></markdown>
+      </article>
     </div>
+  }
+
+  @if (notFound) {
+    <blog-not-found></blog-not-found>
   }
 
   @if (relatedPosts$ | async; as relatedPosts) {
     @if (relatedPosts.length) {
-      <blog-divider></blog-divider>
-      <div class="center-container">
+      <blog-divider class="extra-spacing"></blog-divider>
+      <div class="center-container post__related-container">
         <h3>Continue the Journey: Explore Related Posts</h3>
         <div class="post__related-posts">
           @for (relatedPost of relatedPosts; track $index) {
@@ -51,4 +58,4 @@
       </div>
     }
   }
-</div>
+</section>
