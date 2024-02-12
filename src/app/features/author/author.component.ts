@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthorsService } from '../../core/services/authors.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { Observable, map, switchMap, withLatestFrom } from 'rxjs';
+import { map, Observable, switchMap, tap, withLatestFrom } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { Author } from '../../core/model/author.model';
 import { PostsListComponent } from '../../components/posts-list/posts-list.component';
@@ -11,18 +11,21 @@ import { Category } from '../../core/model/categories.model';
 import { MatChipsModule } from '@angular/material/chips';
 import { GradientComponent } from '../../components/gradient/gradient.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
+import { AvatarComponent } from '../../components/avatar/avatar.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'blog-author',
   standalone: true,
   imports: [
     AsyncPipe,
-    AuthorComponent,
     PostsListComponent,
     MatChipsModule,
     GradientComponent,
     RouterLink,
-    NotFoundComponent
+    NotFoundComponent,
+    AvatarComponent,
+    MatButtonModule,
   ],
   templateUrl: './author.component.html',
   styleUrl: './author.component.scss',
@@ -38,7 +41,12 @@ export class AuthorComponent {
             key.replace(/\W/g, '').toLowerCase() ===
             param?.toLowerCase().replace(/\W/g, '')
         )?.[1]
-    )
+    ),
+    tap((author) => {
+      if (!author) {
+        this.notFound = true;
+      }
+    })
   );
   posts$: Observable<Post[] | undefined> = this.author$.pipe(
     switchMap(author =>
@@ -55,6 +63,8 @@ export class AuthorComponent {
   );
 
   Category = Object.fromEntries(Object.entries(Category));
+
+  notFound = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,

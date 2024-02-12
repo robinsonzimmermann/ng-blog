@@ -1,3 +1,5 @@
+@use 'breakpoints' as responsive;
+
 .author {
   &__header {
     display: flex;
@@ -7,14 +9,16 @@
     align-items: flex-start;
     gap: 2rem;
     padding: 3rem 1rem;
+    align-items: center;
 
-    @media screen and (min-width: 768px) {
+    @include responsive.up('md') {
       padding: 3rem 0;
       flex-direction: row-reverse;
     }
 
     &-title {
       margin: 0;
+
       h1 {
         margin: 0;
       }
@@ -23,42 +27,20 @@
         color: var(--blog-palette-muted);
       }
     }
-
-    &-avatar {
-      aspect-ratio: 1;
-      position: relative;
-      line-height: 1;
-
-      &::before {
-        content: '';
-        background: repeating-linear-gradient(
-          55deg,
-          var(--blog-palette-accent),
-          var(--blog-palette-accent) 5px,
-          transparent 5px,
-          transparent 1rem
-        );
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        transform: translate(1rem, 1rem);
-      }
-
-      img {
-        position: relative;
-      }
-    }
   }
 
   aside {
     margin: 1rem 0;
     padding: 1rem 0;
     background-color: var(--blog-palette-neutral);
-    mat-chip-set {
-      display: inline-flex;
-      margin-left: 0.5rem;
+
+    mat-chip-row {
+      margin: 0 0.5rem
     }
+  }
+
+  .bottom-cta {
+    padding: 3rem 0;
+    text-align: center;
   }
 }
